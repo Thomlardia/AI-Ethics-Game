@@ -48,4 +48,3 @@ Responsibilities:
 - Frontend Design (dashboards, decision interfaces, and visual feedback)
 - Make sure that complex metrics are intuitive to understand
 - works closely with Lead programmer to link frontend to backend
-

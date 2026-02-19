@@ -1,5 +1,5 @@
 # Game Endings
-This document describes the different possible endings of the game.
+This document describes the different possible endings of the game, the decisions you need to make to get there, and the metrics that trigger it.
 
 ## Main Endings 
 
