@@ -11,10 +11,27 @@ This helps us understand the level of engagement of each person.
 Briefly describe the AI system/scenario your game is based on.
 Explain the ethical problem(s) you focus on (e.g. bias, privacy, responsibility, free speech, etc.).
 
+The AI system our game revolves around is the AI-driven recommendation system of social media platforms. In this scenario, the player is hired as the head of the Ethical Algorithmic Task Force (EATF) by the social media corporation (corp_name). The goal of the EATF is to make ethical adjustments to the algorithm in order to improve the corporation's public image.
+
+The main ethical tension of the game lies in how the player's decisions impact the various stakeholders. It can mainly be described as the trade-off between engagement and user safety in the algorithm. Making the algorithm safer would result in less engagement and therefore less revenue and growth for the corporation. However, a highly engaging algorithm might endanger user well-being by creating addiction or by targeting vulnerable groups (e.g. children).
+
+The ethical tension is, of course, more nuanced, since there are many stakeholders involved, each with different motives. The player will interact with and make decisions that impact all of these stakeholders, and by doing so create a story about how the social media algorithm can be properly developed—or how it can go terribly wrong.
+
+
 ## Learning Goas
 3-5 bullet points
 What should players understand or be able to reflect on after playing?
 Use “By the end of the game, players should be able to…” sentences.
+
+- By the end of the game, players should be able to explain the trade-off between maximizing user engagement and protecting user well-being in social media recommendation algorithms.
+
+- By the end of the game, players should be able to identify the different stakeholders involved in social media platforms and reflect on how ethical decisions affect them differently.
+
+- By the end of the game, players should be able to recognize how design choices in recommendation systems can unintentionally encourage addiction or exploit vulnerable users.
+
+- By the end of the game, players should be able to reflect on the ethical responsibilities of companies and developers when designing large-scale AI systems.
+
+- By the end of the game, players should understand the role they play themselves in this ethical problem as a consumer who engages with the social media algoirthm.
 
 ## Conceptual & Theoretical Background
 Link your game to at least:
