@@ -3,13 +3,15 @@ Report 2 is written as if you were publishing the game for other instructors and
 
 ## Game Overview
 Title of the game
-Number of players
-Recommended age
-Estimated play time for the short version (max ~20 minutes)
+Number of players: 1
+Recommended age: 12+
+Estimated play time for the short version: 5-20 min
 
 ## Materials
 List all components: cards, boards, dice, roles, tokens, printouts, etc.
 If everything is on paper or slides, describe how to prepare it.
+
+A computer. 
 
 ## Setup
 Provide a step-by-step explanation of how to prepare the game before playing:
@@ -22,6 +24,8 @@ Use a short text to set the scene. Clarify:
 Who are the players?
 What is their role? (e.g. AI ethics committee, content moderators, hospital triage team…)
 What is the main dilemma or challenge?
+
+The social media corporation (corp_name) has been facing public backlash and governmental pressure due to the unethical development of their AI-driven recommendation system. Many complaints have been made by journalists, government executives, and their own users about the unethical nature of their algorithm. You are hired by (corp_name) as the head of the Ethical Algorithmic Task Force (EATF) and your goal is to make ethical adjustments to the algorithm in order to improve the corporation's public image. However, you must also keep in mind the interests of the advertisers, investors, CEO, and the board of the corporation, who might not be too happy with the ethical improvements you implement.
 
 ## Turn Structure/Game Flow
 Explain what happens in a round/turn, in a clear and ordered way:
