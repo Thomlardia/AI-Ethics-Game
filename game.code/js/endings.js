@@ -1,8 +1,11 @@
-// Check ending logic.
+﻿// Check ending logic.
 // example: 
 
 export function checkEnding(state) {
-  if (state.trust > 70 && state.mentalHealth > 65) {
+  // Example ending: high trust + high user well-being
+  if (state.trust > 70 && state.userWellBeing > 65) {
     return "Ethical Transformation";
   }
+
+  return null;
 }
