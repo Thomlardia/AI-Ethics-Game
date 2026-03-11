@@ -1,5 +1,5 @@
 # Game Stakeholders
-This document describes the different characters the player can interact with. 
+This document describes the different characters the player can interact with. Stakeholders are identified by answering the questions in slide 15 of the Ethics of AI Value Conflicts presentation (4th lecture of the course).
 
 ## Internal
 
