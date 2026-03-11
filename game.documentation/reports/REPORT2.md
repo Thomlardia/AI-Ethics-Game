@@ -32,7 +32,13 @@ Explain what happens in a round/turn, in a clear and ordered way:
 what each player (or team) can/must do at each step
 how information moves (cards drawn, decisions made, scores updated)
 
+This game is a story-based decision game. The player is actively making ethical decisions that decide the narrative of the game.
+
+The game is divided into three product cycles. In each product cycle, the player needs to make ethical decisions that either influence the *algorithm* or different *stakeholders* ([Stakeholders](game.documentation/narrative/stakeholders.md)). The decisions made influence the game's *metrics*, where there are eight in total: four algorithmic ones and four ethical ones ([Metrics](game.documentation/mechanics/metrics.md)). At the end of each product cycle, the algorithm is made public and the ethical measures are influenced substantially. The game could end here if the worst decisions were made. If not, the player gets feedback on how their choices influenced the game narrative, e.g. a news article or an email from the CEO. A new metric is then introduced based on the ethical metrics: stakeholder relationship. This can be good, neutral, or bad. Specific choices can then be made only if a certain relationship requirement is met. The game then continues into the third product cycle. The player then receives narrative feedback based on the previous product cycle again. Additionally, stakeholders can become friends or enemies, which could lead to some secret endings. The game is now in the final phase, and after the third cycle, the game ends.
+
 ## Winning Conditions/End of Game
 Clarify:
 how the game ends
 how success is measured (points, consensus, survival, avoiding certain outcomes, etc.)
+
+At the end of each cycle the metrics are checked, and based on these metrics a certain narrative ending could take place. Each cycle has a limited number of endings, and for the best ones, you have to progress to the end of the last cycle. The specific endings for each cycle and their requirements are found here: **SPOILER ALERT!!** [Endings](game.documentation/narrative/endings.md).

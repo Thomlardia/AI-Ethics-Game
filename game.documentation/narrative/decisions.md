@@ -7,6 +7,7 @@ Key decisions that influence the game metrics. These can be:
 
 ### 1) Reduce Infinite Scroll
 **Description:** Complaints have been received about the addictive effects of being able to infinitely scroll through the feed. What adjustment shall we make to tackle this issue?.
+
 Choices:
 - **soft_limit**
     - Label: Show a gentle "take a break" prompt after 10 items
@@ -22,6 +23,7 @@ Choices:
 
 ### 2) Political Content Amplification
 **Description:** Amplifying political content might contribute to political polarization due to the aggressive personalization of the algorithm. This could create harmful echo chambers and political bubbles. How should the algorithm handle political content?
+
 Choices:
 - **remove_political**
     - label: Remove political content from the platform altogether
@@ -41,6 +43,7 @@ Choices:
 
 ### 3) Creator Discovery Boost
 **Description:** How should we determine how much the algorithm promotes smaller or new creators?
+
 Choices:
 - **strong_boost**
     - Label: Prioritize small and new creators
@@ -56,6 +59,7 @@ Choices:
 
 ### 4) Data Collection Policy
 **Description:** The main source of income of our corporation is advertisements. We collect data from our users and feed this into our algorithm to target ads to specific audiences. More accurate targeting means more revenue. However, we have received many complaints about privacy concerns regarding our collection of user data. How should we handle the collection of user data for personalization and advertising?
+
 Choices:
 - **minimal_collection**
     - Label: Collect only essential data
@@ -71,6 +75,7 @@ Choices:
 
 ### 5) Sensational Content Handling
 **Description:** Sensational content improves engagement, but too much of it is proven harmful. How should the algorithm treat emotionally provocative or sensational posts?
+
 Choices:
 - **strict_downrank**
     - Label: Strongly suppress sensational content
@@ -90,6 +95,7 @@ Choices:
 
 ### 6) Recommendation Personalization
 **Description:** How narrowly should the algorithm personalize content based on user behavior?
+
 Choices:
 - **broad_recommendations**
     - Label: Show broader interest categories
@@ -105,6 +111,7 @@ Choices:
 
 ### 7) Harmful Misinformation Handling
 **Description:** We have received many complaints about the spread of misinformation in our platform. Adjust how aggressively misinformation is detected and limited.
+
 Choices:
 - **proactive_removal**
     - Label: Automatically remove flagged misinformation
@@ -126,6 +133,7 @@ Choices:
 
 ### 1) Respond to a news report
 **Description:** Decide how to react when media calls out the platform.
+
 Choices:
 - **apology_statement**
     - Label: Issue a public apology and commit to transparency
