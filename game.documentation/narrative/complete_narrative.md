@@ -2,7 +2,7 @@
 
 ## Narritive structure Decision Roadmap
 
-:::mermaid
+```mermaid
 flowchart
 subgraph Stage 1[Stage 1 : Kickoff]
 A[Q1 Project Vision]
@@ -57,15 +57,10 @@ style E fill:yellow, color: black,stroke:black,stroke-width:5px
 style I fill:yellow, color: black,stroke:black,stroke-width:5px
 style N fill:pink, color: black, stroke:black,stroke-width:5px
 
-:::
+```
 
 The flowchart resempbles the gameflow in 5 stages. Quesitons are intergrated into the frist 5 stages, these questions will be answered by the player which effect the certain metrics values ( see metrics.md). In addtion there are three check ups steps, between stage 2 and 3 , stage 3 and 4 and after stage 5. These checks ups evaluate if any metric value reached a predefined threshold that effect the game progress.
-    
+
 ### stage 1 - Kickoff
 
-
-
-
-
 ## The narritive
-
