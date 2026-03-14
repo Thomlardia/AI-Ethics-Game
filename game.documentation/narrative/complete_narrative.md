@@ -277,7 +277,7 @@ The dicussing shift towards user data.
 The manager glances at you.
 
         **Q6 - Data Collection Policy
-          1. |We will focus on minimal data collection.   | AP -20, CSF +5
+        1. |We will focus on minimal data collection.   | AP -20, CSF +5
 
         2. | A balanced data collection is our target.  | AP +10
 
@@ -308,6 +308,45 @@ Reactions of journalists and users begin to appear online.
         if EI lower and CD higher
 
         A smaller group praise the platfrom with respect to its engaging recommendations, while a significant group raise questions regaring the controversial content the alrogrim may amplify. 
+
+### Stage 4 - Crisis
+
+The AI system represents bias towards exterme content due to the higher engagment. Internal dicussions between different stakeholders arises. 
+
+        Engineer: The algortims is working properly as intendeed. It focusses on engagment.
+
+        Manager: But if we release the systems like this, we might amplify misinformaiton or harmful content. 
+
+The CEO reminds all the other stakeholder of the upcoming laung deadline.
+
+What would be the most suitable approach to take?
+
+        **Q8 - Whistleblower/Problem
+
+
+        1. |Launch the AI model as plan.  | EI +15, AP +10, CSF -20
+
+        2. |Delay launch to fix the problem  | CSF +20, AP -10
+
+        3. |Launch with temporary safeguard | EI +5, CSF +10
+
+
+The team also needs to decicde how to control misinfromaiton and sensational content.
+
+
+         **Q9 - Misinformation Hnadling
+
+        1. |Proactive removal | CSF +20, EI -10
+
+        2. |Contextual labels  | CSF +10
+
+        3. |Minimal intervention | EI +5, CSF -10
+
+        4. |No intervention | EI +10, CSF -20
+
+
+
+
 
 
 
