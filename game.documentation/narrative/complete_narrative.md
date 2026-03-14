@@ -171,7 +171,7 @@ Later during a design meeting, one engineer rasied an importnat concern.
 
         Engineer: Our recoomination system is curlly running on infinate scrolling. This keeps usres engaged, but it will encourgae harm and addicity behaviour.
 
-    The product managaer nods.
+The product managaer nods.
 
         **Q4 - Infinite Scroll
         Manager: We recept muplitle complaints with respect to addicitve behavoru in the past. Should we adjust this mechaism?
@@ -191,6 +191,112 @@ Later during a design meeting, one engineer rasied an importnat concern.
     CEO: [ Poeple can indeed decide for themselfs] -> option 3
 
 ### Product_cycle_1_Interval Audit
+
+A few weeks later the company conducted and internal review of the project. The review highlighted promising engmanget results, however questions with respect to potnetial risks were also raised.
+
+An internal report sumerizes the situation:
+
+    scenario 1 - High Engagement Focus (EI > 70 and CSF < 40)
+
+        The reccomidation system shows and siginifcant increawmnt in the engemant metrics. Users spend more time on the plafrom and watch more frequently recommended content.
+
+        However, early situamiton suggested that the alrogtim may amplify emotional attachements. While is stiumaultes a higher engemwent rate, it coul raise concersn with respect to user wellbeing and plafrom responsibilites.
+
+    scenario 2 - Balanced Development (EI 40–70 and CSF 40–70)
+
+        The recommedation systems illustrated a a steady improvement in engemant, while mainint g a stabel content distribution.
+
+        Early simaultions indicate that emtional charged contect still apperain the recommendation feed. However these effect as less harmful due to modern strategies and new safe guards.
+
+    scenario 3 - Safety-Oriented System (CSF > 70)
+
+        The recommendation system protitize the distribution of resonlble conent by including safe guards design. Ths design limit the aplication of emtoally charged material.
+
+        While the engmanget metics are improbing with respect to previous porjects, the systems appears to reduces the risk of aplciont harmfull content and enhance an more stable user enviorment.
+
+Stakeholders reponse
+
+    ### scenario 1
+
+        Stakeholder prompts
+
+        CEO: [ ]
+
+        Manager: [ ]
+
+        Engineer: [ ]
+
+    #### scenario 2
+
+        Stakeholder prompts
+
+        CEO: [ ]
+
+        Manager: [ ]
+
+        Engineer: [ ]
+
+    #### scenario 3
+
+        Stakeholder prompts
+
+        CEO: [ ]
+
+        Manager: [ ]
+
+        Engineer: [ ]
+
+
+### Stage 3 - Investor Meeting
+
+News about the new AI systems has reached the company's investors. A meeting with the investors is scheduled to dicuss the progress and concerns of the project.
+
+Several investors join via video confernence.
+
+        Investors: We are very excited to hear about the growth potential of this system. However we want to know what possible risk may emerge.
+
+The CEO gestured towards the AI developing team.
+
+        CEO: Our engineers have been building on this powerful recommendation system.
+
+The inveestors turn their attention to you.
+
+        ** Q5 - Safety Reassurance
+
+        **options
+         1. |The project will promise strong finacial growth.       | AP +20, EI +5
+
+        2. |The potential of this recommendation system is reflected by focussing on responsible AI.  | CSF +20
+
+        3. |The project has some delay to study some features for potnetial risk. | CSF +10, AP -5
+
+The dicussing shift towards user data.
+
+        Investors: How much user data will be collected to improve the recommendation system
+
+The manager glances at you.
+
+        **Q6 - Data Collection Policy
+          1. |We will focus on minimal data collection.   | AP -20, CSF +5
+
+        2. | A balanced data collection is our target.  | AP +10
+
+        3. |Agrgressive data collection. | AP +20, EI +5
+
+
+Later that week a journialist  publsihses an critial articale with respect to recommendation systems.
+
+The PR team is discussing how the comapny should response.
+
+        **Q7 - Responding to Media Criticism
+
+        1. |Apology statment   | PP -10, IC -5
+
+        2. |Deny and litlgate  | PP +10, IC +5
+
+
+
+
 
 
 
