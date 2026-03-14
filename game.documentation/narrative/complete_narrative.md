@@ -294,6 +294,24 @@ The PR team is discussing how the comapny should response.
 
         2. |Deny and litlgate  | PP +10, IC +5
 
+### Product_cycle_2_Market Reaction
+
+After the investor meeting, the system enters limited beta testing.
+
+Reactions of journalists and users begin to appear online. 
+
+        if EI higher and CD lower
+
+        A significant group praise the platfrom with respect to its engaging recommendations, while a smaller group raise questions regaring the controversial content the alrogrim may amplify. 
+
+
+        if EI lower and CD higher
+
+        A smaller group praise the platfrom with respect to its engaging recommendations, while a significant group raise questions regaring the controversial content the alrogrim may amplify. 
+
+
+
+
 
 
 
