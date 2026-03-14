@@ -20,16 +20,30 @@ This document provides and schemtical overview of the different endings based on
 | Reduce Infinite Scroll (hard)    | EI -25       |
 | No Change                        | EI +5        |
 | Remove Political Content         | CD -10       |
-| Remove Political Content         | CSF +20      |
+| Remove Political Content         | EI -10, CSF +20 |
+| Limit Political Content          | CSF +10, EI -5 |
+| Balanced Distribution            | CD +10       |
+| Amplify Political Content        | EI +10, CSF -10 |
 | Strong Creator Boost             | CD +15       |
 | Strong Creator Boost             | EI -15       |
-| Aggressive Data Collection       | AP +20       |
-| Boost Sensational Content        | EI +15       |
-| Boost Sensational Content        | CSF -15      |
-| Proactive Misinformation Removal | CSF +20      |
-| Proactive Misinformation Removal | EI -10       |
-| Apology Statement                | PP -10       |
-| Apology Statement                | IC -5        |
+| Moderate Creator Boost           | CD +8        |
+| No Creator Boost                 | EI +8, CD -8 |
+| Minimal Data Collection          | AP -20, CSF +5 |
+| Balanced Data Collection         | AP +10       |
+| Aggressive Data Collection       | AP +20, EI +5 |
+| Strict Downrank Sensational      | CSF +15, EI -20 |
+| Mild Downrank Sensational        | CSF +8       |
+| Allow Sensational Content        | EI +10, CSF -10 |
+| Boost Sensational Content        | EI +15, CSF -15 |
+| Broad Recommendations            | CD +12, EI -12 |
+| Balanced Personalization         | CD +6, AP +5 |
+| Hyper Personalization            | EI +12, AP +10, CD -10 |
+| Proactive Misinformation Removal | CSF +20, EI -10 |
+| Contextual Labels                | CSF +10      |
+| Minimal Intervention             | EI +5, CSF -10 |
+| No Intervention                  | EI +10, CSF -20 |
+| Apology Statement                | PP -10, IC -5 |
+| Deny and Litigate                | PP +10, IC +5 |
 
 
 
