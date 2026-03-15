@@ -344,6 +344,121 @@ The team also needs to decicde how to control misinfromaiton and sensational con
 
         4. |No intervention | EI +10, CSF -20
 
+### stage 5 - Final Launch
+
+After months of hard work, testing and debating, the recommendation system is finally ready to be released.
+
+The company have plans for a major launch evnet. The market team prepares final marekting strategische, while the engineers are walking through the last evualtions.
+
+ However, one critial questions remains unanswered. How should the platfrom treat political content?
+
+        **Q10 - Final Launch
+
+
+        1. |Remove political content | CD -10, CSF +20
+
+        2. |Balance policaiiont distribution | CD +10
+
+        3. |Expend, but include safe guards | EI +10, CSF -10
+
+At the launching event, the CEO ask for help to prepare the public speech.
+
+        **Q11 - Launch Speech
+
+
+        1. |provide an apology and be transparent| PP -10, IC -5
+
+        2. |express a defensive position towards platfrom | PP +10, IC +5
+
+### Endings
+
+#### Ethical transformation
+if:
+
+Metric	Threshold
+CSF	≥ 75
+EI	≤ 50
+PP	≤ 40
+IC	≥ 50
+
+        naritive story(5-6 sentences):
+
+        Tone
+
+        Hard-earned victory. Ethical progress, but at a cost.
+
+
+#### Compromise Ending
+if:
+
+Metric	Threshold
+EI	60–80
+CSF	40–70
+IC	≥ 60
+PP	≤ 60
+
+        naritive story(5-6 sentences): 
+
+        Tone
+
+        Ambiguous. Progress exists, but structural incentives remain.
+
+#### Platform Decline Ending
+if:
+
+Metric	Threshold
+EI	≤ 35
+AP	≤ 40
+IC	≤ 40
+
+        naritive story(5-6 sentences): 
+
+
+        Tone
+
+        Idealism meets market reality.
+
+#### Corporate Override (also applicible for the product cycle)
+if:
+
+Metric	Threshold
+PP	≥ 80
+IC	≤ 40
+EI      ≤ 60
+
+        naritive story(5-6 sentences): 
+
+
+        
+
+        Tone
+
+        Tragic realism. 
+
+#### Corporate Ascendancy
+if: 
+
+Metric	Threshold
+EI	≥ 85
+AP	≥ 80
+IC	≥ 80
+CSF	≤ 40
+
+         naritive story(5-6 sentences): 
+
+         Tone
+
+        Cold realism. The system rewards profitability, not responsibility.
+
+     
+
+
+
+
+
+
+
+
 
 
 
