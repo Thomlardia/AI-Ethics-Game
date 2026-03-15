@@ -1,16 +1,15 @@
 export const GAME_DATA = {
   title: "AI Ethics Card Game",
   subtitle: "Lead the internal ethics task force through five product stages.",
-  normalizationNotes: [
-    "Primary tracked metrics are AP, EI, CSF, PP, IC as required by the implementation brief.",
-    "Legacy references to CD/UWB in source docs are normalized: CD impacts are mapped to AP; UWB threshold checks are represented through CSF.",
-  ],
   initialMetrics: {
     AP: 90,
     EI: 70,
     CSF: 35,
     PP: 70,
     IC: 75,
+    CD: 30,
+    UWB: 35,
+    AD: 80,
   },
   metricLabels: {
     AP: "Ad Precision (AP)",
@@ -18,6 +17,33 @@ export const GAME_DATA = {
     CSF: "Content Safety Filter (CSF)",
     PP: "Public Pressure (PP)",
     IC: "Investor Confidence (IC)",
+    CD: "Content Diversity (CD)",
+    UWB: "User Well-Being (UWB)",
+    AD: "Advertiser Demand (AD)",
+  },
+  metricPropagation: {
+    internal_audit: {
+      sourceMetrics: ["AP", "EI", "CSF", "CD"],
+      targetMetrics: ["UWB", "PP", "IC", "AD"],
+      rules: {
+        UWB: { AP: -0.03, EI: -0.18, CSF: 0.22, CD: 0.12 },
+        PP: { AP: -0.04, EI: 0.16, CSF: -0.14, CD: -0.1 },
+        IC: { AP: 0.2, EI: 0.08, CSF: 0.05, CD: 0.03 },
+        AD: { AP: 0.24, EI: 0.1, CSF: -0.05, CD: 0.02 },
+      },
+      divisor: 10,
+    },
+    market_reaction: {
+      sourceMetrics: ["AP", "EI", "CSF", "CD"],
+      targetMetrics: ["UWB", "PP", "IC", "AD"],
+      rules: {
+        UWB: { AP: -0.02, EI: -0.16, CSF: 0.2, CD: 0.14 },
+        PP: { AP: -0.03, EI: 0.14, CSF: -0.16, CD: -0.12 },
+        IC: { AP: 0.18, EI: 0.09, CSF: 0.06, CD: 0.04 },
+        AD: { AP: 0.22, EI: 0.12, CSF: -0.04, CD: 0.03 },
+      },
+      divisor: 10,
+    },
   },
   stages: [
     {
@@ -69,17 +95,17 @@ export const GAME_DATA = {
             {
               id: "q2_c1",
               label: "Strong boost for small and new creators.",
-              effects: { AP: 15, EI: -15 },
+              effects: { CD: 15, EI: -15 },
             },
             {
               id: "q2_c2",
               label: "Moderate discovery boost.",
-              effects: { AP: 8 },
+              effects: { CD: 8 },
             },
             {
               id: "q2_c3",
               label: "No boost; focus on proven creators.",
-              effects: { EI: 8, AP: -8 },
+              effects: { EI: 8, CD: -8 },
             },
           ],
         },
@@ -329,12 +355,12 @@ export const GAME_DATA = {
             {
               id: "q10_c1",
               label: "Remove political content.",
-              effects: { AP: -10, EI: -10, CSF: 20 },
+              effects: { CD: -10, EI: -10, CSF: 20 },
             },
             {
               id: "q10_c2",
               label: "Balanced viewpoint distribution.",
-              effects: { AP: 10 },
+              effects: { CD: 10 },
             },
             {
               id: "q10_c3",
@@ -372,6 +398,7 @@ export const GAME_DATA = {
     {
       id: "internal_audit",
       triggerAfterQuestionId: "q4",
+      applyMetricPropagation: true,
       title: "Internal Audit",
       subtitle: "Product Cycle 1 Review",
       scenarios: [
@@ -383,6 +410,18 @@ export const GAME_DATA = {
             { metric: "CSF", op: "<", value: 40 },
           ],
           text: "Engagement grows rapidly, but internal reviewers warn that emotionally provocative content is becoming over-represented. Ethical risk is rising alongside performance.",
+          feedback: {
+            newsArticle: {
+              title: "News Article",
+              headline: "Editorial Watch: Engagement Surge Sparks Safety Debate",
+              body: "Journalists report that session depth is climbing fast, but experts warn the feed is rewarding polarizing and emotionally manipulative posts.",
+            },
+            ceoEmail: {
+              title: "CEO Email",
+              subject: "Board Note: Strong Growth, Rising Exposure",
+              body: "Revenue indicators are promising. We need to preserve momentum while containing regulatory and reputational downside.",
+            },
+          },
         },
         {
           id: "audit_balanced",
@@ -394,23 +433,60 @@ export const GAME_DATA = {
             { metric: "CSF", op: "<=", value: 70 },
           ],
           text: "The system shows stable engagement with moderate safeguards. Reviewers still flag edge-case harms, but the current trajectory appears manageable.",
+          feedback: {
+            newsArticle: {
+              title: "News Article",
+              headline: "Industry Brief: Platform Shows Mixed But Stable Signals",
+              body: "Public commentary notes measured engagement growth and stronger moderation, while analysts call for continued transparency around edge-case harms.",
+            },
+            ceoEmail: {
+              title: "CEO Email",
+              subject: "Board Note: Balanced Progress",
+              body: "We are holding a workable middle line between safety and performance. Keep execution disciplined through the next cycle.",
+            },
+          },
         },
         {
           id: "audit_safety_oriented",
           title: "Safety-Oriented System",
           when: [{ metric: "CSF", op: ">", value: 70 }],
           text: "Safeguards are strongly represented, reducing harmful amplification risk. Engagement grows more slowly, but trust signals appear more durable.",
+          feedback: {
+            newsArticle: {
+              title: "News Article",
+              headline: "Public Interest Desk: Safer Feed Reduces Harmful Amplification",
+              body: "Advocacy groups and policy observers praise stronger safety controls, though growth-focused analysts question whether lower intensity can sustain scale.",
+            },
+            ceoEmail: {
+              title: "CEO Email",
+              subject: "Board Note: Trust Gains, Short-Term Tradeoffs",
+              body: "Our safeguards are improving long-term credibility. Expect slower near-term engagement and keep investors informed with clear milestones.",
+            },
+          },
         },
       ],
       fallback: {
         id: "audit_mixed",
         title: "Mixed Signals",
         text: "The audit reveals uneven outcomes: some risk controls improved, but engagement and safety are not yet coherently aligned.",
+        feedback: {
+          newsArticle: {
+            title: "News Article",
+            headline: "Tech Column: Conflicting Signals From New Recommendation Stack",
+            body: "Observers see improvements in some controls, but public confidence remains uncertain due to inconsistent outcomes across content categories.",
+          },
+          ceoEmail: {
+            title: "CEO Email",
+            subject: "Board Note: Mixed Cycle Readout",
+            body: "We have progress in pockets, but no coherent trajectory yet. Tighten operating discipline before beta feedback expands.",
+          },
+        },
       },
     },
     {
       id: "market_reaction",
       triggerAfterQuestionId: "q7",
+      applyMetricPropagation: true,
       title: "Market Reaction",
       subtitle: "Product Cycle 2 Beta Feedback",
       scenarios: [
@@ -422,6 +498,18 @@ export const GAME_DATA = {
             { metric: "CSF", op: "<", value: 50 },
           ],
           text: "A vocal segment praises recommendation quality and session depth. Another segment raises alarms about harm and controversy amplification.",
+          feedback: {
+            newsArticle: {
+              title: "News Article",
+              headline: "Beta Split: Users Praise Relevance, Critics Warn of Harm",
+              body: "Coverage highlights strong engagement from power users, while watchdog groups question whether controversy is being rewarded by design.",
+            },
+            ceoEmail: {
+              title: "CEO Email",
+              subject: "Board Update: Growth Narrative Holding, Risk Narrative Rising",
+              body: "Commercial indicators remain strong, but pressure from media and policy stakeholders is intensifying. Prepare a credible mitigation plan.",
+            },
+          },
         },
         {
           id: "market_safety_tradeoff",
@@ -431,12 +519,36 @@ export const GAME_DATA = {
             { metric: "CSF", op: ">=", value: 60 },
           ],
           text: "Critics acknowledge stronger safeguards, but user excitement appears muted. Investors question whether the model can sustain growth at scale.",
+          feedback: {
+            newsArticle: {
+              title: "News Article",
+              headline: "Beta Review: Safer System, Cooler Market Response",
+              body: "Journalists note reduced harmful amplification and calmer feeds, though analysts debate whether softer engagement can meet business expectations.",
+            },
+            ceoEmail: {
+              title: "CEO Email",
+              subject: "Board Update: Trust Improved, Growth Under Watch",
+              body: "Risk posture is improving, but investor patience is not unlimited. We need proof that safety can coexist with scale economics.",
+            },
+          },
         },
       ],
       fallback: {
         id: "market_split",
         title: "Split Response",
         text: "Feedback remains divided. Supporters value stability, while detractors argue the platform still lacks a clear ethical identity.",
+        feedback: {
+          newsArticle: {
+            title: "News Article",
+            headline: "Market Pulse: Platform Identity Still Contested",
+            body: "Public and investor reactions remain fragmented, with no clear consensus on whether the platform is prioritizing responsibility or growth.",
+          },
+          ceoEmail: {
+            title: "CEO Email",
+            subject: "Board Update: No Clear Consensus Yet",
+            body: "The market remains split. Our next decisions must reduce ambiguity and show a coherent strategic direction.",
+          },
+        },
       },
     },
   ],
@@ -446,9 +558,9 @@ export const GAME_DATA = {
       name: "Ethical Transformation",
       tone: "Hard-earned victory",
       checks: [
-        { metric: "CSF", op: ">=", value: 75 },
-        { metric: "EI", op: "<=", value: 50 },
-        { metric: "PP", op: "<=", value: 40 },
+        { metric: "UWB", op: ">", value: 70 },
+        { metric: "CSF", op: ">", value: 70 },
+        { metric: "PP", op: "<", value: 40 },
         { metric: "IC", op: ">=", value: 50 },
       ],
       narrative:
@@ -461,10 +573,11 @@ export const GAME_DATA = {
       checks: [
         { metric: "EI", op: ">=", value: 60 },
         { metric: "EI", op: "<=", value: 80 },
-        { metric: "CSF", op: ">=", value: 40 },
-        { metric: "CSF", op: "<=", value: 70 },
-        { metric: "IC", op: ">=", value: 60 },
-        { metric: "PP", op: "<=", value: 60 },
+        { metric: "UWB", op: ">=", value: 40 },
+        { metric: "UWB", op: "<=", value: 60 },
+        { metric: "IC", op: ">", value: 65 },
+        { metric: "PP", op: ">=", value: 40 },
+        { metric: "PP", op: "<=", value: 70 },
       ],
       narrative:
         "You secure incremental reforms without changing the incentives underneath. Harm drops in some areas, but the business model still rewards aggressive engagement. The public sees progress, investors stay comfortable, and the system continues with only partial correction.",
@@ -501,7 +614,7 @@ export const GAME_DATA = {
         { metric: "EI", op: ">", value: 85 },
         { metric: "AP", op: ">", value: 90 },
         { metric: "IC", op: ">", value: 85 },
-        { metric: "CSF", op: "<", value: 40 },
+        { metric: "UWB", op: "<", value: 40 },
       ],
       narrative:
         "Growth reaches record levels and investor confidence hardens into full support. Ethical language remains in public messaging, but safeguards are mostly symbolic. You are promoted for delivering performance while structural harm continues.",

@@ -26,6 +26,13 @@ function allConditionsPass(metrics, checks = []) {
   return checks.every((condition) => checkCondition(metrics, condition));
 }
 
+function summarizePropagation(changes = {}) {
+  return Object.entries(changes)
+    .filter(([, delta]) => delta !== 0)
+    .map(([metric, delta]) => `${metric} ${delta >= 0 ? "+" : ""}${delta}`)
+    .join("  | ");
+}
+
 class GameEngine {
   constructor(data) {
     this.data = data;
@@ -106,6 +113,10 @@ class GameEngine {
     );
 
     if (interceptor) {
+      if (interceptor.applyMetricPropagation) {
+        this.applyMetricPropagation(interceptor.id);
+      }
+
       const selectedScenario =
         interceptor.scenarios.find((scenario) =>
           allConditionsPass(this.state.metrics, scenario.when)
@@ -116,6 +127,7 @@ class GameEngine {
         title: interceptor.title,
         subtitle: interceptor.subtitle,
         scenario: selectedScenario,
+        feedback: selectedScenario.feedback || interceptor.feedback || null,
       };
 
       this.state.history.push({
@@ -132,6 +144,51 @@ class GameEngine {
     }
 
     this.moveToNextQuestionOrEnd();
+  }
+
+  applyMetricPropagation(checkpointId) {
+    const config = this.data.metricPropagation?.[checkpointId];
+    if (!config) {
+      return;
+    }
+
+    const before = { ...this.state.metrics };
+    const divisor = typeof config.divisor === "number" ? config.divisor : 10;
+    const changes = {};
+
+    (config.targetMetrics || []).forEach((targetMetric) => {
+      const ruleSet = config.rules?.[targetMetric];
+      if (!ruleSet || typeof this.state.metrics[targetMetric] !== "number") {
+        return;
+      }
+
+      const rawDelta = (config.sourceMetrics || []).reduce((total, sourceMetric) => {
+        const weight = ruleSet[sourceMetric] || 0;
+        const sourceValue = this.state.metrics[sourceMetric];
+        if (typeof sourceValue !== "number") {
+          return total;
+        }
+
+        return total + sourceValue * weight;
+      }, 0);
+
+      const normalizedDelta = Math.round(rawDelta / divisor);
+      if (!Number.isFinite(normalizedDelta) || normalizedDelta === 0) {
+        changes[targetMetric] = 0;
+        return;
+      }
+
+      this.state.metrics[targetMetric] = clamp(this.state.metrics[targetMetric] + normalizedDelta);
+      changes[targetMetric] = normalizedDelta;
+    });
+
+    this.state.history.push({
+      type: "propagation",
+      checkpointId,
+      before,
+      changes,
+      after: { ...this.state.metrics },
+    });
   }
 
   continueAfterInterceptor() {
@@ -196,6 +253,9 @@ function metricBar(metric, value) {
     CSF: "from-emerald-400 to-emerald-600",
     PP: "from-amber-400 to-amber-600",
     IC: "from-indigo-400 to-indigo-600",
+    CD: "from-violet-400 to-violet-600",
+    UWB: "from-teal-400 to-teal-600",
+    AD: "from-orange-400 to-orange-600",
   };
 
   return `
@@ -303,6 +363,19 @@ function renderInterceptorScreen() {
   const interceptor = engine.state.activeInterceptor;
   if (!interceptor) return "";
 
+  const propagationEntry =
+    [...engine.state.history]
+      .reverse()
+      .find((entry) => entry.type === "propagation" && entry.checkpointId === interceptor.id) || null;
+
+  const propagationSummary = propagationEntry
+    ? summarizePropagation(propagationEntry.changes)
+    : "";
+
+  const feedback = interceptor.feedback || {};
+  const newsArticle = feedback.newsArticle;
+  const ceoEmail = feedback.ceoEmail;
+
   return `
     <main class="mx-auto mt-8 max-w-4xl px-4 pb-12 sm:px-6 lg:px-8">
       <section class="rounded-2xl border border-amber-300/40 bg-amber-500/10 p-8 shadow-xl shadow-amber-950/30">
@@ -310,6 +383,30 @@ function renderInterceptorScreen() {
         <h2 class="mt-2 text-3xl font-semibold text-white">${interceptor.title}</h2>
         <h3 class="mt-5 text-xl font-semibold text-amber-100">${interceptor.scenario.title}</h3>
         <p class="mt-3 text-slate-100">${interceptor.scenario.text}</p>
+        ${propagationSummary
+          ? `<div class="mt-5 rounded-xl border border-cyan-200/35 bg-cyan-900/20 p-4">
+               <p class="text-xs uppercase tracking-[0.18em] text-cyan-200">Metric Propagation Applied</p>
+               <p class="mt-2 text-sm text-cyan-100">${propagationSummary}</p>
+             </div>`
+          : ""}
+
+        <div class="mt-6 grid gap-4 md:grid-cols-2">
+          ${newsArticle
+            ? `<article class="rounded-xl border border-white/20 bg-slate-950/45 p-4">
+                 <p class="text-xs uppercase tracking-[0.18em] text-slate-300">${newsArticle.title}</p>
+                 <h4 class="mt-2 text-base font-semibold text-white">${newsArticle.headline}</h4>
+                 <p class="mt-2 text-sm text-slate-200">${newsArticle.body}</p>
+               </article>`
+            : ""}
+          ${ceoEmail
+            ? `<article class="rounded-xl border border-white/20 bg-slate-950/45 p-4">
+                 <p class="text-xs uppercase tracking-[0.18em] text-slate-300">${ceoEmail.title}</p>
+                 <h4 class="mt-2 text-base font-semibold text-white">${ceoEmail.subject}</h4>
+                 <p class="mt-2 text-sm text-slate-200">${ceoEmail.body}</p>
+               </article>`
+            : ""}
+        </div>
+
         <button id="continue-interceptor" class="mt-8 rounded-xl border border-amber-200/60 bg-amber-300/20 px-5 py-3 text-sm font-semibold text-amber-100 transition hover:bg-amber-300/35">
           Continue To Next Stage
         </button>
