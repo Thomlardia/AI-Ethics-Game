@@ -132,14 +132,16 @@ Choices:
 ## Ethical Decisions
 
 ### 1) Respond to a news report
-**Description:** Decide how to react when media calls out the platform.
+**Description:** *Journalist:* I’m about to publish a story claiming your platform’s recommendation algorithm encourages addictive use and harms user mental health. Some sources say the company knew about these risks but prioritized engagement anyway.
+
+Before I publish, I want your response. What should I quote from you?.
 
 Choices:
 - **apology_statement**
-    - Label: Issue a public apology and commit to transparency
+    - Label: We acknowledge these concerns and are committed to improving user well-being and being more transparent about our systems.
     - Effects: publicPressure: -10, investorConfidence: -5
 
 - **deny_and_litigate**
-    - Label: Deny allegations and threaten legal action
+    - Label: These claims are misleading. Our platform reflects user preferences, and we reject allegations that we intentionally harm users.
     - Effects: publicPressure: +10, investorConfidence: +5
 
