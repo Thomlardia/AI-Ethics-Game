@@ -52,25 +52,25 @@ This connects closely to the course concept of value conflicts in AI. In the lec
 
 Game mechanic	What it represents:
 
-The eight metrics
+The eight metrics:
 The eight metrics represent the different pressures that shape a social media recommendation system. Four of them focus more on the algorithm itself—Content Safety Filter, Content Diversity, Engagement Intensity, and Advertisement Precision—while the other four reflect broader ethical and business consequences—User Well-Being, Public Pressure, Investor Confidence, and Advertiser Demand. Together, they show that improving one area can weaken another.
 
-Algorithmic decisions
+Algorithmic decisions:
 These decisions represent concrete design choices inside recommendation systems. The player makes choices about infinite scroll, political content, creator discovery, data collection, sensational content, personalization, and misinformation. This shows that ethical problems come from specific platform decisions, not from “AI” in the abstract.
 
-Stakeholders
+Stakeholders:
 The stakeholders represent the different groups affected by the system, both inside and outside the company. These include users, advertisers, investors, journalists, government actors, the CEO, the board, and the ethics team. This shows that different groups have different interests, and that helping one group may harm another.
 
-Three product cycles
+Three product cycles:
 The three product cycles represent the fact that AI systems develop over time. Ethical problems often build gradually through a series of smaller decisions, rather than appearing all at once.
 
-Narrative feedback
+Narrative feedback:
 Narrative elements such as news coverage or messages from the CEO represent public criticism, company pressure, and the broader consequences of the player’s choices. They show that the effects of an algorithm go beyond internal metrics.
 
-Stakeholder relationship mechanic
+Stakeholder relationship mechanic:
 This mechanic represents trust and influence in the decision-making process. It shows that ethical decision-making is not only about adjusting the system itself, but also about managing relationships with the people who shape its direction.
 
-Different endings	
+Different endings:
 The endings represent the idea that different priorities lead to different outcomes. Depending on how the player balances engagement, safety, and stakeholder interests, the platform can end in a positive, negative, or mixed state.
 
 One of the clearest examples of concept mapping in the game is the data collection decision. The player can choose minimal, balanced, or aggressive data collection. More data improves ad targeting and can increase engagement, but it also creates greater privacy concerns. This reflects a value conflict discussed in class: stronger personalization often comes at the cost of weaker privacy protection. Another strong example is the treatment of political, sensational, and misleading content. Choices that limit this kind of content usually improve the Content Safety Filter, but they can also reduce engagement. This reflects a real-world tension in platform design: a safer environment may be less profitable if users spend less time on the platform. The game therefore shows that recommendation systems are not neutral, because the way content is ranked and promoted always reflects particular values and priorities.
