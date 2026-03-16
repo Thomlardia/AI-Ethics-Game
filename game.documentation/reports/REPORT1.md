@@ -39,6 +39,26 @@ Link your game to at least:
 1–2 concepts or tools from the technical/practical part (e.g. fairness metrics, ranking scores, explanation methods, governance frameworks, etc.).
 Include 3–5 references (course readings or other approved materials).
 
+**Philosophy integration into the game**
+
+The game design is inspired by the ethical conflict between utilitariansim and deontology. This conflict is a significant topic in the ethics of AI. Utilitarianism emphasizes maximizing overall outcomes in the frame of financial development, user engagement, and efficiency of the service or product. The game represents these outcomes in decisions that prioritize platform success in the form of higher user engagement, mechanical features that enable infinite scrolling, and optimizing recognition algorithms. These in-game decisions aim to improve metric values with respect to business performance. 
+
+In contrast, deontological ethics are partially inspired by Immanuel Kant and the concept of the categorical imperative. These ideas illustrate that moral duties and principles are more important than the outcome. Protecting user autonomy, dignity, and well-being needs to be chosen over business profit or platform development, according to these perspectives. In the game, this perspective is enhanced by providing the decision to enable, for example, a “hard break" on infinite scrolling and by limiting manipulation and algorithmic features. This way the player chooses a moral approach to the game, prioritizing the well-being and safety of the user instead of the success of the company.
+
+A second philosophical design in the game is Value-Sensitive Design (VSD). Value-sensitive design is an approach that explicitly incorporates human values into the technical design. The player interacts as an AI developer with different stakeholders. Those stakeholders all have their own personalities and interests. The game operations are in the form of metrics to represent these different interests that need to be balanced. For example, the Engagement Index (EI) is linked to economic prosperity and the Comparative Safety Factor (CSF) to user well-being. Players are encouraged to reflect on how social values and technical outputs are affected by design decisions.
+
+**Technical and practical integration into the game**
+
+The game implemented a narrative-based decision-making simulation. Players can select a decision option that affects metric values. These decisions include several different technical and practical AI ethical concepts.
+
+One important concept is algorithm fairness. In stage 1, players can make the decisions to adjust the algorithm to include smaller creators. If the play did not do anything, then the algorithm would amplify “popular creators" due to the feedback loop from the recommendation system. This phenomenon is described as the "Matthew effect." However, players can choose to boost smaller creators to ensure fairness and equality of opportunity over all the creators on the platform. The player can reduce the biases of the recommendation system by including a ranking algorithm.
+
+Another significant concept is privacy and data governance. In one scenario, the recommendation system for the platform needs to be improved. This improvement can be realized by increasing the user data collection. However, the player needs to decide if it would be valid to enhance algorithmic accuracy or minimize the user data collection to protect the users' privacy and well-being. This dilemma illustrates important AI topics in the section of user autonomy, human dignity, and the trade-off between personal and privacy protection.
+
+The philosophical and practical AI governance papers enhance the players' ability to reflect on ethical dilemmas within design choices in a playful game environment.
+
+
+
 ## Mechanics & Concept Mapping
 Explain how specific game elements represent aspects of the ethical issue. For example:
 “Random event cards represent uncertainty in real-world data.”
