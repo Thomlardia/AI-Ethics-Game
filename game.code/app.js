@@ -284,7 +284,7 @@ function renderTopBar() {
             <p class="text-xs uppercase tracking-[0.2em] text-slate-300">Stage ${engine.state.currentStage} of 5</p>
           </div>
           <div class="text-right">
-            <p class="text-xs uppercase tracking-[0.2em] text-slate-300">Questions</p>
+            <p class="text-xs uppercase tracking-[0.2em] text-slate-300">Decisions</p>
             <p class="text-sm font-semibold text-white">${progress.answered} / ${progress.total}</p>
           </div>
         </div>
