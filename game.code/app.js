@@ -321,7 +321,6 @@ function renderQuestionScreen() {
         class="choice-btn group w-full rounded-xl border border-white/25 bg-slate-900/50 p-4 text-left transition hover:-translate-y-0.5 hover:border-cyan-300 hover:bg-slate-900/75"
       >
         <p class="text-sm font-medium text-white">${choice.label}</p>
-        <p class="mt-2 text-xs uppercase tracking-[0.16em] text-cyan-200/90">${formatEffects(choice.effects)}</p>
       </button>
     `
     )
@@ -425,7 +424,7 @@ function renderSummaryScreen() {
         <p class="text-xs uppercase tracking-[0.16em] text-slate-300">Decision ${index + 1} · ${entry.stage}</p>
         <p class="mt-1 font-medium text-white">${entry.questionTitle}</p>
         <p class="mt-1 text-sm text-cyan-200">${entry.choiceLabel}</p>
-        <p class="mt-2 text-xs text-slate-300">${formatEffects(entry.effects)}</p>
+          <p class="mt-2 text-xs uppercase tracking-[0.14em] text-cyan-200/80">${formatEffects(entry.effects)}</p>
       </li>
     `
     )
