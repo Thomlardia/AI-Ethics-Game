@@ -46,6 +46,38 @@ Explain how specific game elements represent aspects of the ethical issue. For e
 “Scoring rules illustrate trade-offs between accuracy and fairness.”
 A small table is recommended (Game mechanic → what ethical/technical aspect it represents).
 
+---
+The mechanics of our game are designed to show that developing an AI system is not just a technical task, but also an ethical and social one. The game focuses on the recommendation system of a social media platform. The player takes the role of the head of the Ethical Algorithmic Task Force (EATF) and has to make decisions about how the algorithm should be changed while dealing with pressure from different stakeholders. The main ethical problem in the game is the trade-off between engagement and user safety. Making the platform safer can reduce engagement, revenue, and growth, while maximizing engagement can damage user well-being and create public backlash.
+This connects closely to the course concept of value conflicts in AI. In the lectures, Value Sensitive Design was presented as an approach that identifies stakeholders, considers the values that matter to them, and translates those values into design choices. Our game applies this idea by turning values such as safety, well-being, profit, and accountability into mechanics that the player must actively balance.
+
+Game mechanic	What it represents:
+
+The eight metrics
+The eight metrics represent the different pressures that shape a social media recommendation system. Four of them focus more on the algorithm itself—Content Safety Filter, Content Diversity, Engagement Intensity, and Advertisement Precision—while the other four reflect broader ethical and business consequences—User Well-Being, Public Pressure, Investor Confidence, and Advertiser Demand. Together, they show that improving one area can weaken another.
+
+Algorithmic decisions
+These decisions represent concrete design choices inside recommendation systems. The player makes choices about infinite scroll, political content, creator discovery, data collection, sensational content, personalization, and misinformation. This shows that ethical problems come from specific platform decisions, not from “AI” in the abstract.
+
+Stakeholders
+The stakeholders represent the different groups affected by the system, both inside and outside the company. These include users, advertisers, investors, journalists, government actors, the CEO, the board, and the ethics team. This shows that different groups have different interests, and that helping one group may harm another.
+
+Three product cycles
+The three product cycles represent the fact that AI systems develop over time. Ethical problems often build gradually through a series of smaller decisions, rather than appearing all at once.
+
+Narrative feedback
+Narrative elements such as news coverage or messages from the CEO represent public criticism, company pressure, and the broader consequences of the player’s choices. They show that the effects of an algorithm go beyond internal metrics.
+
+Stakeholder relationship mechanic
+This mechanic represents trust and influence in the decision-making process. It shows that ethical decision-making is not only about adjusting the system itself, but also about managing relationships with the people who shape its direction.
+
+Different endings	
+The endings represent the idea that different priorities lead to different outcomes. Depending on how the player balances engagement, safety, and stakeholder interests, the platform can end in a positive, negative, or mixed state.
+
+One of the clearest examples of concept mapping in the game is the data collection decision. The player can choose minimal, balanced, or aggressive data collection. More data improves ad targeting and can increase engagement, but it also creates greater privacy concerns. This reflects a value conflict discussed in class: stronger personalization often comes at the cost of weaker privacy protection. Another strong example is the treatment of political, sensational, and misleading content. Choices that limit this kind of content usually improve the Content Safety Filter, but they can also reduce engagement. This reflects a real-world tension in platform design: a safer environment may be less profitable if users spend less time on the platform. The game therefore shows that recommendation systems are not neutral, because the way content is ranked and promoted always reflects particular values and priorities.
+
+Overall, the mechanics are intended to make the ethical problem easier to understand. Instead of only reading about the tension between maximizing engagement and protecting well-being, the player experiences it directly through decisions and consequences. In this way, the game turns an abstract AI ethics issue into a more concrete and interactive scenario.
+At the same time, the game remains a simplified model of a real-world problem. Actual social media recommendation systems are much more complex, and the harms they create are often difficult to measure. However, the simplification is useful because it makes the main ethical conflict clearer and easier to grasp in a short game session. It helps players focus on the central tension without getting distracted by too much technical complexity.
+
 ## Mini-Reflection
 1.5-2 pages
 What does your game make more visible or intuitive about the problem?
