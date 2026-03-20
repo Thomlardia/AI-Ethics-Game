@@ -3,14 +3,23 @@ Welcome to the project!  See the detailed docs below:
 
 ## Quickstart
 
-Run:
+### Option 1: Local (Python)
 
 ```bash
 cd game.code
 python3 -m http.server 5500
 ```
 
-Open: http://localhost:5500/index.html
+Open: http://localhost:5500
+
+### Option 2: Docker
+
+```bash
+docker build -t ai-ethics-game .
+docker run -p 5500:5500 ai-ethics-game
+```
+
+Open: http://localhost:5500
 
 Test:
 - Play all 11 decisions.
