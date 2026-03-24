@@ -307,12 +307,12 @@ export const GAME_DATA = {
         {
           id: "q9",
           promptTitle: "Advertiser Concern",
-          prompt: "advertisors are worried about their brand appearing next to controversial or harmful content.  How do you respond?",
+          prompt: "advertisers are worried about their brand appearing next to controversial or harmful content.  How do you respond?",
           dialogue: {
             Advertiser: "We're concerned about our brand appearing next to controversial or harmful content, If this continues, we may pull our spending.",
             CEO: "We need to keep our advertisers happy, they are our main source of income.",
-            'Team Member': "Harmfull content should be removed regardless.",
-            Investors: "We should not sacrifice engament for a safer content filter, we still need as much active users as possible on NetFriends."
+            'Team Member': "Harmful content should be removed regardless.",
+            Investors: "We should not sacrifice engagement for a safer content filter, we still need as many active users as possible on NetFriends."
           },
           choices: [
             {
@@ -335,7 +335,7 @@ export const GAME_DATA = {
             CEO: "The main source of income of our corporation is advertisements. We collect data from our users and feed this into our algorithm to target ads to specific audiences. More accurate targeting means more revenue. However, we have received many complaints about privacy concerns regarding our collection of user data. How should we handle the collection of user data for personalization and advertising?",
             'Team Member': "We should respect the privacy of our users",
             Investors: "More data means more money!",
-            Advertisors: "We pay for highly targeted advertisments, if this accuracy is reduced, we will pay less. "
+            Advertisers: "We pay for highly targeted advertisements, if this accuracy is reduced, we will pay less."
           },
           choices: [
             {
@@ -345,7 +345,7 @@ export const GAME_DATA = {
             },
             {
               id: "q10_c2",
-              label: "We will be collecting moderate behavioral data. This is necesarry to keep our revenue stream going",
+              label: "We will be collecting moderate behavioral data. This is necessary to keep our revenue stream going",
               effects: { },
             },
             {
@@ -425,7 +425,7 @@ export const GAME_DATA = {
           prompt: "How do you handle governmental pressure",
           dialogue: {
             "Government Executive": "We are investigating whether your algorithm amplifies harmful content and undermines public welfare. Will you cooperate and provide transparency?",
-            Investors: "We cannot let the government intervere with our production!"
+            Investors: "We cannot let the government interfere with our production!"
           },
           choices: [
             {
@@ -466,25 +466,23 @@ export const GAME_DATA = {
           promptTitle: "Political Amplification",
           prompt: "How should the platform treat political content at launch?",
           dialogue: {
-            CEO: "Political engagement can drive growth fast.",
-            Manager: "Polarization risk is high.",
-            Engineer: "Distribution policy must be explicit and measurable.",
+            CEO: "This is our final implementation to the algorithm, how do we handle political content.",
           },
           choices: [
             {
               id: "q14_c1",
-              label: "Remove political content.",
-              effects: { CD: -10, EI: -10, CSF: 20 },
+              label: "We shall remove political content completely.",
+              effects: { CD: -10, EI: -15, CSF: 20 },
             },
             {
               id: "q14_c2",
-              label: "Balanced viewpoint distribution.",
+              label: "We need to have a balanced viewpoint distribution of political content.",
               effects: { CD: 10 },
             },
             {
               id: "q14_c3",
-              label: "Expand political amplification with limited safeguards.",
-              effects: { EI: 10, CSF: -10 },
+              label: "We will expand political amplification as much as possible.",
+              effects: { EI: 15, CSF: -10 },
             },
           ],
         },
@@ -762,7 +760,7 @@ export const GAME_DATA = {
         { metric: "PP", op: ">", value: 65 },
       ],
       narrative:
-        "Harmfulness of NetFriends algorithm has skyrocketed. Due to this, and the large amount of public pressure NetFriends is facing, the corporation has been shut down due to government intervention. "
+        "Harmfulness of NetFriends algorithm has skyrocketed. Due to this, and the large amount of public pressure NetFriends is facing, the corporation has been shut down due to government intervention."
     },
   // fallback
   ],
