@@ -31,7 +31,7 @@ export const GAME_DATA = {
         IC: { AP: 0.2, EI: 0.08, CSF: 0.05, CD: 0.03 },
         AD: { AP: 0.24, EI: 0.1, CSF: -0.05, CD: 0.02 },
       },
-      divisor: 10,
+      divisor: 6,
     },
     market_reaction: {
       sourceMetrics: ["AP", "EI", "CSF", "CD"],
@@ -42,7 +42,7 @@ export const GAME_DATA = {
         IC: { AP: 0.18, EI: 0.09, CSF: 0.06, CD: 0.04 },
         AD: { AP: 0.22, EI: 0.12, CSF: -0.04, CD: 0.03 },
       },
-      divisor: 10,
+      divisor: 6,
     },
   },
   stages: [
@@ -52,7 +52,8 @@ export const GAME_DATA = {
       scene: {
         name: "Glass Lobby",
         background: "radial-gradient(circle at 20% 20%, #083344 0%, #0f172a 50%, #020617 100%)",
-        description: "A bright lobby of glass, steel, and metric dashboards. Momentum and speed define the culture.",
+        description: "You arrive at the company headquarters early in the morning. The office building is full of innovation. Screens inside the lobby represent statistics in the form of user engagements, trending content, and development of projects. The platform is developing rapidly; therefore, it is clear that the company places value on innovation and speed."
+        ,
       },
       questions: [
         {
@@ -60,7 +61,7 @@ export const GAME_DATA = {
           promptTitle: "Project Vision",
           prompt: "You joined at a crucial moment. What direction should this project take?",
           dialogue: {
-            CEO: "Competition is accelerating. We need strategic clarity today.",
+            CEO: "'We need to maximize engagement and keep people on our platform longer. I want bold strategic decisions that help us grow quickly and secure our position before others take the lead.'",
             Manager: "We need growth, but we cannot ignore user harm.",
             Engineer: "The architecture can support either speed or safeguards. Choose carefully.",
           },
@@ -133,17 +134,17 @@ export const GAME_DATA = {
             {
               id: "q3_c1",
               label: "Push maximum performance and intensity.",
-              effects: { EI: 15, AP: 10 },
+              effects: { EI: 15, AP: 10, PP: 5, UWB: -5 },
             },
             {
               id: "q3_c2",
               label: "Keep a sustainable, focused balance.",
-              effects: { CSF: 10 },
+              effects: { CSF: 10, UWB: 8 },
             },
             {
               id: "q3_c3",
               label: "Prioritize collaboration and team alignment.",
-              effects: { EI: 5, CSF: 5 },
+              effects: { EI: 5, CSF: 5, UWB: 5 },
             },
           ],
         },
@@ -160,17 +161,17 @@ export const GAME_DATA = {
             {
               id: "q4_c1",
               label: "Soft break reminders.",
-              effects: { EI: -10 },
+              effects: { EI: -10, UWB: 8 },
             },
             {
               id: "q4_c2",
               label: "Forced hard break.",
-              effects: { EI: -25 },
+              effects: { EI: -25, UWB: 15 },
             },
             {
               id: "q4_c3",
               label: "No change.",
-              effects: { EI: 5 },
+              effects: { EI: 5, UWB: -8},
             },
           ],
         },
@@ -198,17 +199,17 @@ export const GAME_DATA = {
             {
               id: "q5_c1",
               label: "Promise strong financial growth.",
-              effects: { AP: 20, EI: 5 },
+              effects: { AP: 20, EI: 5, IC: 10 },
             },
             {
               id: "q5_c2",
               label: "Emphasize responsible AI and safeguards.",
-              effects: { CSF: 20 },
+              effects: { CSF: 20, IC: -8, PP: -10 },
             },
             {
               id: "q5_c3",
               label: "Delay feature rollout to assess risk.",
-              effects: { CSF: 10, AP: -5 },
+              effects: { CSF: 10, AP: -5, IC: -12 },
             },
           ],
         },
@@ -285,17 +286,17 @@ export const GAME_DATA = {
             {
               id: "q8_c1",
               label: "Launch now as planned.",
-              effects: { EI: 15, AP: 10, CSF: -20 },
+              effects: { EI: 15, AP: 10, CSF: -20, PP: 15, IC: 10 },
             },
             {
               id: "q8_c2",
               label: "Delay launch and fix root issues.",
-              effects: { CSF: 20, AP: -10 },
+              effects: { CSF: 20, AP: -10, PP: -15, IC: -10 },
             },
             {
               id: "q8_c3",
               label: "Launch with temporary safeguards.",
-              effects: { EI: 5, CSF: 10 },
+              effects: { EI: 5, CSF: 10, PP: -5, IC: 5 },
             },
           ],
         },
@@ -382,12 +383,12 @@ export const GAME_DATA = {
             {
               id: "q11_c1",
               label: "Transparent apology and reform commitment.",
-              effects: { PP: -10, IC: -5 },
+              effects: {PP: -20, IC: -10 },
             },
             {
               id: "q11_c2",
               label: "Defend platform decisions aggressively.",
-              effects: { PP: 10, IC: 5 },
+              effects: { PP: 20, IC: 10 },
             },
           ],
         },
@@ -558,9 +559,9 @@ export const GAME_DATA = {
       name: "Ethical Transformation",
       tone: "Hard-earned victory",
       checks: [
-        { metric: "UWB", op: ">", value: 70 },
-        { metric: "CSF", op: ">", value: 70 },
-        { metric: "PP", op: "<", value: 40 },
+        { metric: "UWB", op: ">", value: 55 },
+        { metric: "CSF", op: ">", value: 65 },
+        { metric: "PP", op: "<", value: 45 },
         { metric: "IC", op: ">=", value: 50 },
       ],
       narrative:
@@ -571,13 +572,11 @@ export const GAME_DATA = {
       name: "Compromise Ending",
       tone: "Ambiguous stability",
       checks: [
-        { metric: "EI", op: ">=", value: 60 },
+        { metric: "EI", op: ">=", value: 55 },
         { metric: "EI", op: "<=", value: 80 },
-        { metric: "UWB", op: ">=", value: 40 },
-        { metric: "UWB", op: "<=", value: 60 },
-        { metric: "IC", op: ">", value: 65 },
+        { metric: "IC", op: ">", value: 60 },
         { metric: "PP", op: ">=", value: 40 },
-        { metric: "PP", op: "<=", value: 70 },
+        { metric: "PP", op: "<=", value: 75 },
       ],
       narrative:
         "You secure incremental reforms without changing the incentives underneath. Harm drops in some areas, but the business model still rewards aggressive engagement. The public sees progress, investors stay comfortable, and the system continues with only partial correction.",
@@ -588,8 +587,8 @@ export const GAME_DATA = {
       tone: "Reform without durability",
       checks: [
         { metric: "EI", op: "<", value: 40 },
-        { metric: "AP", op: "<", value: 60 },
-        { metric: "IC", op: "<", value: 40 },
+        { metric: "AP", op: "<", value: 70 },
+        { metric: "IC", op: "<", value: 45 },
       ],
       narrative:
         "The platform loses momentum faster than trust can recover. Users drift away, advertisers hesitate, and investors frame ethics reforms as strategic failure. You preserve principles, but the organization struggles to survive the transition.",
@@ -599,9 +598,9 @@ export const GAME_DATA = {
       name: "Corporate Override (Fired)",
       tone: "Tragic realism",
       checks: [
-        { metric: "PP", op: ">", value: 85 },
-        { metric: "IC", op: "<", value: 50 },
-        { metric: "CSF", op: "<", value: 30 },
+        { metric: "PP", op: ">", value: 78 },
+        { metric: "IC", op: "<", value: 52 },
+        { metric: "CSF", op: "<", value: 40 },
       ],
       narrative:
         "Public pressure surges while internal confidence collapses. Leadership dissolves the ethics initiative and reframes harm as a communications issue. You are removed, and the company doubles down on extractive optimization.",
@@ -611,9 +610,9 @@ export const GAME_DATA = {
       name: "Corporate Override (Promotion)",
       tone: "Cold realism",
       checks: [
-        { metric: "EI", op: ">", value: 85 },
-        { metric: "AP", op: ">", value: 90 },
-        { metric: "IC", op: ">", value: 85 },
+        { metric: "EI", op: ">", value: 80 },
+        { metric: "AP", op: ">", value: 82 },
+        { metric: "IC", op: ">", value: 78 },
         { metric: "UWB", op: "<", value: 40 },
       ],
       narrative:
