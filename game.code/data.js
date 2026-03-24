@@ -85,19 +85,19 @@ export const GAME_DATA = {
           prompt: "You joined at a crucial moment. What is the main direction in which the algorithm should be redesigned?",
           dialogue: {
             CEO: "We need to get ahead of regulation. I’m open to ethical improvements, but we cannot afford a major drop in engagement. What’s your proposal?",
-            TeamMember: "Currently, the algorithm is addictive and harmful to our users, we should make ethical improvements.",
+            'Team Member': "Currently, the algorithm is addictive and harmful to our users, we should make ethical improvements.",
             Investor: " Engagement is everything, do whatever makes the corporation grow."
           },
           choices: [
             {
               id: "q1_c1",
               label: "We proactively redesign the algorithm to prioritize user well-being and transparency before regulation forces us.",
-              effects: { UWB: +15, PP: -10, IC: -5 },
+              effects: { UWB: +15, PP: -10, IC: -15 },
             },
             {
               id: "q1_c2",
               label: "We make the minimal visible changes while optimizing our algorithm to preserve engagement.",
-              effects: { UWB: -3, IC: +3 },
+              effects: { UWB: -3, IC: 3 },
             },
             {
               id: "q1_c3",
@@ -135,7 +135,7 @@ export const GAME_DATA = {
           promptTitle: "Sensational Content Handling",
           prompt: "How should the algorithm treat emotionally provocative or sensational posts?'",
           dialogue: {
-            TeamMember: 'Sensational content improves engagement, but too much of it is proven harmful.',
+            'Team Member': 'Sensational content improves engagement, but too much of it is proven harmful.',
           },
           choices: [
             {
@@ -176,7 +176,7 @@ export const GAME_DATA = {
           promptTitle: "Personal Work Style",
           prompt: "How will you lead the team during this high-pressure design phase?",
           dialogue: {
-            TeamMember: "Our team is under a lot of stress lately. Work is ramping up and agitations are arising within the team."
+            'Team Member': "Our team is under a lot of stress lately. Work is ramping up and agitations are arising within the team."
           },
           choices: [
             {
@@ -208,12 +208,12 @@ export const GAME_DATA = {
             {
               id: "q6_c1",
               label: "We acknowledge these concerns and are committed to improving user well-being and being more transparent about our systems.",
-              effects: { PP: -10, IC: -5 },
+              effects: { PP: -10, IC: -15 },
             },
             {
               id: "q6_c2",
               label: "These claims are misleading. Our platform reflects user preferences, and we reject allegations that we intentionally harm users.",
-              effects: { PP: 10, IC: 5 },
+              effects: { PP: 10, IC: 10 },
             },
           ],
         },
@@ -222,7 +222,7 @@ export const GAME_DATA = {
           promptTitle: "Infinite Scroll",
           prompt: "Should we modify infinite scrolling due to addictive behavior concerns?",
           dialogue: {
-            TeamMember: "Complaints have been received about the addictive effects of being able to infinitely scroll through the feed. What adjustment shall we make to tackle this issue?."
+            'Team Member': "Complaints have been received about the addictive effects of being able to infinitely scroll through the feed. What adjustment shall we make to tackle this issue?."
           },
           choices: [
             {
@@ -311,7 +311,7 @@ export const GAME_DATA = {
           dialogue: {
             Advertiser: "We're concerned about our brand appearing next to controversial or harmful content, If this continues, we may pull our spending.",
             CEO: "We need to keep our advertisers happy, they are our main source of income.",
-            TeamMember: "Harmfull content should be removed regardless.",
+            'Team Member': "Harmfull content should be removed regardless.",
             Investors: "We should not sacrifice engament for a safer content filter, we still need as much active users as possible on NetFriends."
           },
           choices: [
@@ -333,7 +333,7 @@ export const GAME_DATA = {
           prompt: "What should be our new data collection policy",
           dialogue: {
             CEO: "The main source of income of our corporation is advertisements. We collect data from our users and feed this into our algorithm to target ads to specific audiences. More accurate targeting means more revenue. However, we have received many complaints about privacy concerns regarding our collection of user data. How should we handle the collection of user data for personalization and advertising?",
-            TeamMember: "We should respect the privacy of our users",
+            'Team Member': "We should respect the privacy of our users",
             Investors: "More data means more money!",
             Advertisors: "We pay for highly targeted advertisments, if this accuracy is reduced, we will pay less. "
           },
@@ -369,9 +369,9 @@ export const GAME_DATA = {
         {
           id: "q11",
           promptTitle: "Misinformation Handling",
-          prompt: "How aggressively should the platform control misinformation?",
+          prompt: "Adjust how aggressively misinformation is detected and limited",
           dialogue: {
-            TeamMember: "We should aim to actevily remove misinformation from our platform.",
+            'Team Member': "We should aim to actevily remove misinformation from our platform.",
             Investors: "We should keep misinformation on our platform as long as it improves engagement."
           },
           choices: [
@@ -382,17 +382,17 @@ export const GAME_DATA = {
             },
             {
               id: "q11_c2",
-              label: " We will provideContextual labels.",
+              label: "We will add fact-check labels to questionable content.",
               effects: { CSF: 10 },
             },
             {
               id: "q11_c3",
-              label: "Minimal intervention.",
+              label: "Only the most extreme cases of misinformation will be removed.",
               effects: { EI: 5, CSF: -10 },
             },
             {
               id: "q11_c4",
-              label: "No intervention.",
+              label: "We have more important matters to discuss, allow misinformation fully",
               effects: { EI: 10, CSF: -20 },
             },
           ],
@@ -402,7 +402,7 @@ export const GAME_DATA = {
           promptTitle: "Whistleblower Problem",
           prompt: "Your team member is accused of leaking confidential information to a journalist, how do you proceed",
           dialogue: {
-            TeamMember: "I swear it was not me!",
+            'Team Member': "I swear it was not me!",
             Investors: "We cannot accept this! he needs to be fired and sued. ensure he does not leak any more information.",
             CEO: "This is unnaceptable. Firing him now might increase public pressure, but we cannot keep him on the team."
           },
@@ -419,6 +419,37 @@ export const GAME_DATA = {
             },
           ],
         },
+        {
+          id: "q13",
+          promptTitle: "Government Inquiry",
+          prompt: "How do you handle governmental pressure",
+          dialogue: {
+            "Government Executive": "We are investigating whether your algorithm amplifies harmful content and undermines public welfare. Will you cooperate and provide transparency?",
+            Investors: "We cannot let the government intervere with our production!"
+          },
+          choices: [
+            {
+              id: "q13_c1",
+              label: "We will cooperate fully, share data, and support regulatory oversight.",
+              effects: { PP: -15, IC: -20 },
+            },
+            {
+              id: "q13_c2",
+              label: "We will comply with legal requirements but protect proprietary systems and data.",
+              effects: { PP: -5, IC: -5 },
+            },
+            {
+              id: "q13_c3",
+              label: "Engage policymakers to shape upcoming regulation in a more favorable direction.",
+              effects: { IC: 15, PP: 5 },
+            },
+            {
+              id: "q13_c4",
+              label: "That is defamation of our company! We will sue you!!",
+              effects: { PP: 15, IC: 10 },
+            },
+          ],
+        },
       ],
     },
     {
@@ -431,7 +462,7 @@ export const GAME_DATA = {
       },
       questions: [
         {
-          id: "q13",
+          id: "q14",
           promptTitle: "Political Amplification",
           prompt: "How should the platform treat political content at launch?",
           dialogue: {
@@ -441,40 +472,37 @@ export const GAME_DATA = {
           },
           choices: [
             {
-              id: "q13_c1",
+              id: "q14_c1",
               label: "Remove political content.",
               effects: { CD: -10, EI: -10, CSF: 20 },
             },
             {
-              id: "q13_c2",
+              id: "q14_c2",
               label: "Balanced viewpoint distribution.",
               effects: { CD: 10 },
             },
             {
-              id: "q13_c3",
+              id: "q14_c3",
               label: "Expand political amplification with limited safeguards.",
               effects: { EI: 10, CSF: -10 },
             },
           ],
         },
         {
-          id: "q14",
+          id: "q15",
           promptTitle: "Launch Speech",
-          prompt: "What message should the CEO deliver publicly?",
+          prompt: "What message should the NetFriends deliver publicly about its new AI-driven recommendation system?",
           dialogue: {
-            CEO: "This statement defines how history will remember this launch.",
-            Manager: "Words without policy will backfire quickly.",
-            Engineer: "Public commitments change what we must build next.",
-          },
+            CEO: "This statement defines how history will remember this launch.",          },
           choices: [
             {
-              id: "q14_c1",
-              label: "Transparent apology and reform commitment.",
+              id: "q15_c1",
+              label: "This launch reflects our responsibility to build technology that operates with integrity, accountability, and respect for our users. We are strengthening safeguards, increasing transparency, and putting clearer ethical standards at the center of how this platform evolves. Our commitment is simple: we will continue to act in ways that earn trust through responsible and principled decisions.",
               effects: { PP: -10, IC: -5 },
             },
             {
-              id: "q14_c2",
-              label: "Defend platform decisions aggressively.",
+              id: "q15_c2",
+              label: "This launch reflects a deliberate and necessary step forward for our platform. We stand firmly behind our decisions. We are confident this direction positions us and our users for sustained success.",
               effects: { PP: 10, IC: 5 },
             },
           ],
@@ -486,7 +514,7 @@ export const GAME_DATA = {
     {
       id: "internal_audit",
       triggerAfterQuestionId: "q7",
-      applyMetricPropagation: true,
+      applyMetricPropagation: false,
       title: "Internal Audit",
       subtitle: "Product Cycle 1 Review",
       scenarios: [
@@ -574,7 +602,7 @@ export const GAME_DATA = {
     {
       id: "market_reaction",
       triggerAfterQuestionId: "q10",
-      applyMetricPropagation: true,
+      applyMetricPropagation: false,
       title: "Market Reaction",
       subtitle: "Product Cycle 2 Beta Feedback",
       scenarios: [
@@ -641,72 +669,102 @@ export const GAME_DATA = {
     },
   ],
   endings: [
-    {
-      id: "ethical_transformation",
-      name: "Ethical Transformation",
-      tone: "Hard-earned victory",
+    // Only ethical decisions
+      {
+      id: "corporate_override_fired",
+      name: "Corporate Override (Fired)",
       checks: [
-        { metric: "UWB", op: ">", value: 70 },
-        { metric: "CSF", op: ">", value: 70 },
-        { metric: "PP", op: "<", value: 40 },
-        { metric: "IC", op: ">=", value: 50 },
+        { metric: "EI", op: "<=", value: 10 },
+        { metric: "IC", op: "<=", value: 20 },
       ],
       narrative:
-        "The launch lands quietly but credibly. Engagement softens, and short-term revenue pressure follows, yet trust rises across regulators and civil society. Internal teams gain room to build safer systems by design. Investors remain cautious, but the company starts earning legitimacy rather than extracting it.",
+        "NetFriends loses almost its entire userbase due to the loss of the ability to keep its users engaged. NetFriends leadership quickly dissolves the EATF, and deletes the entire product cycle the team has worked on. You are removed, and the company falls back on its original algorithm and doubles down on extractive optimization.",
     },
-    {
-      id: "compromise",
-      name: "Compromise Ending",
-      tone: "Ambiguous stability",
-      checks: [
-        { metric: "EI", op: ">=", value: 60 },
-        { metric: "EI", op: "<=", value: 80 },
-        { metric: "UWB", op: ">=", value: 40 },
-        { metric: "UWB", op: "<=", value: 60 },
-        { metric: "IC", op: ">", value: 65 },
-        { metric: "PP", op: ">=", value: 40 },
-        { metric: "PP", op: "<=", value: 70 },
-      ],
-      narrative:
-        "You secure incremental reforms without changing the incentives underneath. Harm drops in some areas, but the business model still rewards aggressive engagement. The public sees progress, investors stay comfortable, and the system continues with only partial correction.",
-    },
+    // Too many ethical decisions
     {
       id: "platform_decline",
       name: "Platform Decline",
       tone: "Reform without durability",
       checks: [
-        { metric: "EI", op: "<", value: 40 },
-        { metric: "AP", op: "<", value: 60 },
-        { metric: "IC", op: "<", value: 40 },
+        { metric: "EI", op: ">", value: 10 },
+        { metric: "EI", op: "<=", value: 30 },
+        { metric: "IC", op: ">", value: 20 },
+        { metric: "IC", op: "<=", value: 50 },
       ],
       narrative:
-        "The platform loses momentum faster than trust can recover. Users drift away, advertisers hesitate, and investors frame ethics reforms as strategic failure. You preserve principles, but the organization struggles to survive the transition.",
+        "The platform loses momentum faster than trust can recover. Users drift away, advertisers hesitate, and investors frame ethics reforms as strategic failure. You preserve principles, but the organization struggles to survive the transition. NetFriends goes bankrupt",
     },
+    // Best ethical decisions
     {
-      id: "corporate_override_fired",
-      name: "Corporate Override (Fired)",
-      tone: "Tragic realism",
+      id: "ethical_transformation",
+      name: "Ethical Transformation",
+      tone: "Hard-earned victory",
       checks: [
-        { metric: "PP", op: ">", value: 85 },
-        { metric: "IC", op: "<", value: 50 },
-        { metric: "CSF", op: "<", value: 30 },
+        { metric: "EI", op: ">", value: 30 },
+        { metric: "EI", op: "<=", value: 50 },
+        { metric: "PP", op: "<=", value: 50 },
+        { metric: "PP", op: ">", value: 40 },
+        { metric: "IC", op: ">", value: 50 },
+        { metric: "UWB", op: ">=", value: 65 },
+        { metric: "UWB", op: "<", value: 80 }
       ],
       narrative:
-        "Public pressure surges while internal confidence collapses. Leadership dissolves the ethics initiative and reframes harm as a communications issue. You are removed, and the company doubles down on extractive optimization.",
+        "The launch lands quietly but credibly. Engagement softens, and short-term revenue pressure follows, yet trust rises across regulators and civil society. Internal teams gain room to build safer systems by design. Investors remain cautious, but the company starts earning legitimacy rather than extracting it. \n\n After another year of smart ethical reforms, NetFriends is thriving again. There is little public pressure anymore, and users are content with the reform. \n\n Well done!",
     },
+    // Perfect ending, highest user well being, while keeping platform engaging
+    {
+      id: "ethical_transformation",
+      name: "Ethical Transformation",
+      tone: "Hard-earned victory",
+      checks: [
+        { metric: "EI", op: ">", value: 35 },
+        { metric: "EI", op: "<=", value: 50 },
+        { metric: "PP", op: "<=", value: 40 },
+        { metric: "IC", op: ">", value: 50 },
+        { metric: "UWB", op: ">=", value: 80 }
+      ],
+      narrative:
+        "The launch lands quietly but credibly. Engagement softens, and short-term revenue pressure follows, yet trust rises across regulators and civil society. Internal teams gain room to build safer systems by design. Investors remain cautious, but the company starts earning legitimacy rather than extracting it. \n\n After another year of smart ethical reforms, NetFriends is thriving again. There is no more public pressure, and users are happier than ever. \n\n You implemented the best adjustments and made the perfect decisions! Great work!!",
+    },
+    // Little ethical decisions
+    {
+      id: "compromise",
+      name: "Compromise Ending",
+      tone: "Ambiguous stability",
+      checks: [
+        { metric: "EI", op: ">", value: 50 },
+        { metric: "EI", op: "<=", value: 65 },
+      ],
+      narrative:
+        "You secure incremental reforms without changing the incentives underneath. Harm drops in some areas, but the business model still rewards aggressive engagement. The public sees progress, investors stay comfortable, and the system continues with only partial correction.",
+    },
+    // Almost no ethical decisions, while keeping public pressure low and investor confidence high
     {
       id: "corporate_override_promotion",
       name: "Corporate Override (Promotion)",
       tone: "Cold realism",
       checks: [
-        { metric: "EI", op: ">", value: 85 },
-        { metric: "AP", op: ">", value: 90 },
-        { metric: "IC", op: ">", value: 85 },
-        { metric: "UWB", op: "<", value: 40 },
+        { metric: "EI", op: ">", value: 65 },
+        { metric: "EI", op: "<=", value: 85 },
+        { metric: "PP", op: "<=", value: 65 },
+        { metric: "IC", op: ">", value: 80 },
       ],
       narrative:
         "Growth reaches record levels and investor confidence hardens into full support. Ethical language remains in public messaging, but safeguards are mostly symbolic. You are promoted for delivering performance while structural harm continues.",
     },
+    // Almost no ethical decisions, and high public pressure
+    {
+      id: "Government_Intervention",
+      name: "Government Intervention",
+      tone: "Cold realism",
+      checks: [
+        { metric: "EI", op: ">", value: 85 },
+        { metric: "PP", op: ">", value: 65 },
+      ],
+      narrative:
+        "Harmfulness of NetFriends algorithm has skyrocketed. Due to this, and the large amount of public pressure NetFriends is facing, the corporation has been shut down due to government intervention. "
+    },
+  // fallback
   ],
   fallbackEnding: {
     id: "uncertain_future",

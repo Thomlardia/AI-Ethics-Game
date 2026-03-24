@@ -25,7 +25,7 @@ Who are the players?
 What is their role? (e.g. AI ethics committee, content moderators, hospital triage team…)
 What is the main dilemma or challenge?
 
-The social media corporation (corp_name) has been facing public backlash and governmental pressure due to the unethical development of their AI-driven recommendation system. Many complaints have been made by journalists, government executives, and their own users about the harm their algorithm has inflicted. You are hired by (corp_name) as the head of the Ethical Algorithmic Task Force (EATF) and your goal is to make ethical adjustments to the algorithm in order to improve the corporation's public image. However, you must also keep in mind the interests of the advertisers, investors, CEO, and the board of the corporation, who might not be too happy with some of the ethical improvements you implement.
+The social media corporation NetFriends has been facing public backlash and governmental pressure due to the unethical development of their AI-driven recommendation system. Many complaints have been made by journalists, government executives, and their own users about the harm their algorithm has inflicted. You are hired by NetFriends as the head of the Ethical Algorithmic Task Force (EATF) and your goal is to make ethical adjustments to the algorithm in order to improve the corporation's public image. However, you must also keep in mind the interests of the advertisers, investors, CEO, and the board of the corporation, who might not be too happy with some of the ethical improvements you implement.
 
 ## Turn Structure/Game Flow
 Explain what happens in a round/turn, in a clear and ordered way:
