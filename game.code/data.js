@@ -61,7 +61,7 @@ export const GAME_DATA = {
           promptTitle: "Project Vision",
           prompt: "You joined at a crucial moment. What direction should this project take?",
           dialogue: {
-            CEO: "'We need to maximize engagement and keep people on our platform longer. I want bold strategic decisions that help us grow quickly and secure our position before others take the lead.'",
+            CEO: "We need to maximize engagement and keep people on our platform longer.",
             Manager: "We need growth, but we cannot ignore user harm.",
             Engineer: "The architecture can support either speed or safeguards. Choose carefully.",
           },
