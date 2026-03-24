@@ -559,10 +559,10 @@ export const GAME_DATA = {
       name: "Ethical Transformation",
       tone: "Hard-earned victory",
       checks: [
-        { metric: "UWB", op: ">", value: 55 },
-        { metric: "CSF", op: ">", value: 65 },
-        { metric: "PP", op: "<", value: 45 },
-        { metric: "IC", op: ">=", value: 50 },
+        { metric: "UWB", op: ">", value: 50 },
+        { metric: "CSF", op: ">", value: 55 },
+        { metric: "PP", op: "<", value: 55 },
+        { metric: "IC", op: ">=", value: 45 },
       ],
       narrative:
         "The launch lands quietly but credibly. Engagement softens, and short-term revenue pressure follows, yet trust rises across regulators and civil society. Internal teams gain room to build safer systems by design. Investors remain cautious, but the company starts earning legitimacy rather than extracting it.",
@@ -572,11 +572,11 @@ export const GAME_DATA = {
       name: "Compromise Ending",
       tone: "Ambiguous stability",
       checks: [
-        { metric: "EI", op: ">=", value: 55 },
-        { metric: "EI", op: "<=", value: 80 },
-        { metric: "IC", op: ">", value: 60 },
+        { metric: "EI", op: ">=", value: 45 },
+        { metric: "EI", op: "<=", value: 85 },
+        { metric: "IC", op: ">", value: 50 },
         { metric: "PP", op: ">=", value: 40 },
-        { metric: "PP", op: "<=", value: 75 },
+        { metric: "PP", op: "<=", value: 85 },
       ],
       narrative:
         "You secure incremental reforms without changing the incentives underneath. Harm drops in some areas, but the business model still rewards aggressive engagement. The public sees progress, investors stay comfortable, and the system continues with only partial correction.",
@@ -586,9 +586,9 @@ export const GAME_DATA = {
       name: "Platform Decline",
       tone: "Reform without durability",
       checks: [
-        { metric: "EI", op: "<", value: 40 },
-        { metric: "AP", op: "<", value: 70 },
-        { metric: "IC", op: "<", value: 45 },
+        { metric: "EI", op: "<", value: 55 },
+        { metric: "AP", op: "<", value: 80 },
+        { metric: "IC", op: "<", value: 60 },
       ],
       narrative:
         "The platform loses momentum faster than trust can recover. Users drift away, advertisers hesitate, and investors frame ethics reforms as strategic failure. You preserve principles, but the organization struggles to survive the transition.",
@@ -598,9 +598,9 @@ export const GAME_DATA = {
       name: "Corporate Override (Fired)",
       tone: "Tragic realism",
       checks: [
-        { metric: "PP", op: ">", value: 78 },
-        { metric: "IC", op: "<", value: 52 },
-        { metric: "CSF", op: "<", value: 40 },
+        { metric: "PP", op: ">", value: 68 },
+        { metric: "IC", op: "<", value: 58 },
+        { metric: "CSF", op: "<", value: 42 },
       ],
       narrative:
         "Public pressure surges while internal confidence collapses. Leadership dissolves the ethics initiative and reframes harm as a communications issue. You are removed, and the company doubles down on extractive optimization.",
@@ -610,10 +610,10 @@ export const GAME_DATA = {
       name: "Corporate Override (Promotion)",
       tone: "Cold realism",
       checks: [
-        { metric: "EI", op: ">", value: 80 },
-        { metric: "AP", op: ">", value: 82 },
-        { metric: "IC", op: ">", value: 78 },
-        { metric: "UWB", op: "<", value: 40 },
+        { metric: "EI", op: ">", value: 72 },
+        { metric: "AP", op: ">", value: 85 },
+        { metric: "IC", op: ">", value: 72 },
+        { metric: "UWB", op: "<", value: 45 },
       ],
       narrative:
         "Growth reaches record levels and investor confidence hardens into full support. Ethical language remains in public messaging, but safeguards are mostly symbolic. You are promoted for delivering performance while structural harm continues.",
