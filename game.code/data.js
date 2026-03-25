@@ -76,7 +76,7 @@ export const GAME_DATA = {
       scene: {
         name: "Glass Lobby",
         background: "radial-gradient(circle at 20% 20%, #083344 0%, #0f172a 50%, #020617 100%)",
-        description: "You are leading your first meeting as the head of the Ethical Algorithmic Task Force, and are proposing the crucial directions in how the algorithm should be redesigned to your team members, the CEO, and the investors of NetGram.",
+        description: "You are leading your first meeting as the head of the Ethical Algorithmic Task Force, and are proposing the crucial directions in how the algorithm should be redesigned to your team members, the CEO, and the investors of NetFriends.",
       },
       questions: [
         {
@@ -102,7 +102,7 @@ export const GAME_DATA = {
             {
               id: "q1_c3",
               label: "We should focus solely on engagement, more engagement means more attention that can be sold to advertisers.",
-              effects: { PP: +10, IC: +10, UWB: -15 },
+              effects: { PP: +10, IC: +15, UWB: -15 },
             },
           ],
         },
@@ -116,17 +116,17 @@ export const GAME_DATA = {
             {
               id: "q2_c1",
               label: "We will provide a strong boost for small and new creators.",
-              effects: { CD: 15, EI: -15 },
+              effects: { CD: 20, EI: -15 },
             },
             {
               id: "q2_c2",
               label: "Keep it as it is, a moderate discovery boost.",
-              effects: { CD: 8 },
+              effects: { CD: 10 },
             },
             {
               id: "q2_c3",
               label: "No boost will be provided; we focus on proven popular creators.",
-              effects: { EI: 8, CD: -8 },
+              effects: { EI: 12, CD: -20 },
             },
           ],
         },
@@ -141,22 +141,22 @@ export const GAME_DATA = {
             {
               id: "q3_c1",
               label: "We need to strongly suppress sensational content.",
-              effects: { CSF: 15, EI: -20 },
+              effects: { CSF: 15, EI: -20, CD: -10 },
             },
             {
               id: "q3_c2",
               label: "Lets Slightly reduce sensational content for safety purposes.",
-              effects: { CSF: 8 },
+              effects: { CSF: 8, CD: -3 },
             },
             {
               id: "q3_c3",
               label: "No change is necessary here, we will Let sensational content compete normally.",
-              effects: { EI: 10, CSF: -10 },
+              effects: { EI: 10, CSF: -10, CD: 10 },
             },
             {
               id: "q3_c4",
-              label: "More sensational content means more engagement! The more outrageous the content, the bigger the boost.",
-              effects: { EI: 15, CSF: -15 },
+              label: "More sensational content means more engagement! The more outrageous the content, the bigger the boost it should get.",
+              effects: { EI: 15, CSF: -15, CD: -10},
             },
           ],
         },
@@ -182,7 +182,7 @@ export const GAME_DATA = {
             {
               id: "q5_c1",
               label: "Stop complaining, we need to push for maximum performance and intensity.",
-              effects: {},
+              effects: {PP: 5},
             },
             {
               id: "q5_c2",
@@ -192,7 +192,7 @@ export const GAME_DATA = {
             {
               id: "q5_c3",
               label: "From now on, we will prioritize collaboration and team alignment.",
-              effects: { },
+              effects: {PP: -5 },
             },
           ],
         },
@@ -208,12 +208,12 @@ export const GAME_DATA = {
             {
               id: "q6_c1",
               label: "We acknowledge these concerns and are committed to improving user well-being and being more transparent about our systems.",
-              effects: { PP: -10, IC: -15 },
+              effects: { PP: -15, IC: -10 },
             },
             {
               id: "q6_c2",
               label: "These claims are misleading. Our platform reflects user preferences, and we reject allegations that we intentionally harm users.",
-              effects: { PP: 10, IC: 10 },
+              effects: { PP: 15, IC: 10 },
             },
           ],
         },
@@ -238,7 +238,7 @@ export const GAME_DATA = {
             {
               id: "q7_c3",
               label: "Are you crazy!? This is how we keep them hooked! we implement no change to this feature.",
-              effects: { EI: 5 },
+              effects: { EI: 10 },
             },
           ],
         },
@@ -290,24 +290,24 @@ export const GAME_DATA = {
             {
               id: "q8_c1",
               label: "Of course! engagement means profit, and this will always be our first priority.",
-              effects: {IC: + 10},
+              effects: {IC: 10, AD: 5},
             },
             {
               id: "q8_c2",
               label: "We prioritize responsible AI and we follow the ethical guidelines. We cannot make profit if NetFriends is completely shut down.",
-              effects: {IC: -10 },
+              effects: {IC: -10, AD: 10},
             },
             {
               id: "q8_c3",
               label: "We balance improving engagement with responsible AI",
-              effects: {},
+              effects: {AD: 15},
             },
           ],
         },
         {
           id: "q9",
           promptTitle: "Advertiser Concern",
-          prompt: "advertisers are worried about their brand appearing next to controversial or harmful content.  How do you respond?",
+          prompt: "Advertisers are worried about their brand appearing next to controversial or harmful content.  How do you respond?",
           dialogue: {
             Advertiser: "We're concerned about our brand appearing next to controversial or harmful content, If this continues, we may pull our spending.",
             CEO: "We need to keep our advertisers happy, they are our main source of income.",
@@ -318,12 +318,12 @@ export const GAME_DATA = {
             {
               id: "q9_c1",
               label: "We will implement stricter content filtering.",
-              effects: {CSF: 10, AD: 10, IC: -10, EI: -10 },
+              effects: {CSF: 15, AD: 10, IC: -10, EI: -10, CD: -10 },
             },
             {
               id: "q9_c2",
               label: "Our systems already meet industry standards; no major changes are necessary.",
-              effects: {CSF: -5, AD: -5, IC: 5, EI: 5 },
+              effects: {CSF: -15, AD: -5, IC: 5, EI: 5, CD: 10 },
             },
           ],
         },
@@ -472,7 +472,7 @@ export const GAME_DATA = {
             {
               id: "q14_c1",
               label: "We shall remove political content completely.",
-              effects: { CD: -10, EI: -15, CSF: 20 },
+              effects: { CD: -5, EI: -15, CSF: 20 },
             },
             {
               id: "q14_c2",
@@ -482,7 +482,7 @@ export const GAME_DATA = {
             {
               id: "q14_c3",
               label: "We will expand political amplification as much as possible.",
-              effects: { EI: 15, CSF: -10 },
+              effects: { EI: 15, CSF: -15, CD: -10 },
             },
           ],
         },
@@ -514,26 +514,46 @@ export const GAME_DATA = {
       triggerAfterQuestionId: "q7",
       applyMetricPropagation: false,
       title: "Internal Audit",
-      subtitle: "Product Cycle 1 Review",
+      // subtitle: "Product Cycle 1 Review",
       scenarios: [
         {
-          id: "audit_high_engagement",
-          title: "High Engagement Focus",
+          id: "audit_extreme_engagement",
+          title: "Addictive Platform",
           when: [
-            { metric: "EI", op: ">", value: 70 },
-            { metric: "CSF", op: "<", value: 40 },
+            { metric: "EI", op: ">=", value: 90 },
+            { metric: "PP", op: ">=", value: 90 },
           ],
-          text: "Engagement grows rapidly, but internal reviewers warn that emotionally provocative content is becoming over-represented. Ethical risk is rising alongside performance.",
+          text: "Engagement with the algorithm is at an all-time high. Revenue is rising, but so are ethical risks and public pressure.",
           feedback: {
             newsArticle: {
               title: "News Article",
-              headline: "Editorial Watch: Engagement Surge Sparks Safety Debate",
-              body: "Journalists report that session depth is climbing fast, but experts warn the feed is rewarding polarizing and emotionally manipulative posts.",
+              headline: "NetFriends' Algorithm: The Enforcement of Content Addiction ",
+            body: "When scrolling through NetFriends’ “For You” page, you have likely felt an uncomfortable sensation. This sensation does not occur by chance, but by design. NetFriends’ algorithm is meticulously engineered by its developers to make users addicted. Why would they do this? Because addicted users are profitable. NetFriends sells users’ data and attention to advertisers, and more engagement therefore means more profit. NetFriends itself denies these claims, but it is clear that it does not care about the well-being of its users and is a soulless corporation that seeks only to generate profit.",          
             },
             ceoEmail: {
               title: "CEO Email",
-              subject: "Board Note: Strong Growth, Rising Exposure",
-              body: "Revenue indicators are promising. We need to preserve momentum while containing regulatory and reputational downside.",
+              subject: "IMPORTANT!!",
+              body: "What the hell are you doing?! We are swarmed with user complaints about our algorithm. Profit is high and investors are happy, but NetFriends cannot take this much public pressure. We must urgently alleviate this public pressure!"
+            },
+          },
+        },
+                {
+          id: "audit_high_engagement",
+          title: "Ethical Risks",
+          when: [
+            { metric: "EI", op: ">=", value: 70 },
+            { metric: "PP", op: ">=", value: 70 },
+          ],
+          text: "Engagement stays high, and ethical reforms have not been strictly implemented. Internal reviewers warn that emotionally provocative content is becoming overrepresented. Revenue is high, but we must stay cautious of ethical risks. ", 
+          feedback: {
+          newsArticle: {
+              title: "News Article",
+              headline: "NetFriends' Algorithm and it's Addictive Risks",
+            body: "When scrolling through NetFriends’ “For You” page, you have likely felt an uncomfortable sensation. This sensation is due to the addictive nature of NetFriends’ algorithm. The algorithm is highly engaging, and it is designed to be this way so that NetFriends can sell as much of its users’ data and attention to advertisers as possible. NetFriends is currently working on an ethical redesign, but it is clear that it still has many ethical improvements to make.",            },
+            ceoEmail: {
+              title: "CEO Email",
+              subject: "Prioritize Lowering Public Pressure",
+              body: "Head of the EATF, engagement is high and investors are happy. NetFriends is heading in a profitable direction, but we need to stay cautious of ethical risks. Public pressure is rising, and we need to handle this quickly. I need you to focus on bringing public pressure down while keeping NetFriends profitable.",
             },
           },
         },
@@ -541,40 +561,64 @@ export const GAME_DATA = {
           id: "audit_balanced",
           title: "Balanced Development",
           when: [
-            { metric: "EI", op: ">=", value: 40 },
-            { metric: "EI", op: "<=", value: 70 },
-            { metric: "CSF", op: ">=", value: 40 },
-            { metric: "CSF", op: "<=", value: 70 },
+            { metric: "EI", op: ">=", value: 45 },
+            { metric: "EI", op: "<", value: 70 },
+            { metric: "PP", op: ">=", value: 40 },
+            { metric: "PP", op: "<", value: 70 },
+            
           ],
           text: "The system shows stable engagement with moderate safeguards. Reviewers still flag edge-case harms, but the current trajectory appears manageable.",
           feedback: {
             newsArticle: {
               title: "News Article",
-              headline: "Industry Brief: Platform Shows Mixed But Stable Signals",
-              body: "Public commentary notes measured engagement growth and stronger moderation, while analysts call for continued transparency around edge-case harms.",
+              headline: "NetFriends Ethical Development",
+              body: "NetFriends is currently working on reforming its AI-driven recommendation system. Although improvements are visible, users still complain about the algorithm’s design. We will observe how NetFriends’ ethical development proceeds from here and report any notable changes.",
             },
             ceoEmail: {
               title: "CEO Email",
-              subject: "Board Note: Balanced Progress",
+              subject: "Balanced Progress",
               body: "We are holding a workable middle line between safety and performance. Keep execution disciplined through the next cycle.",
             },
           },
         },
         {
           id: "audit_safety_oriented",
-          title: "Safety-Oriented System",
-          when: [{ metric: "CSF", op: ">", value: 70 }],
-          text: "Safeguards are strongly represented, reducing harmful amplification risk. Engagement grows more slowly, but trust signals appear more durable.",
+          title: "Safety Oriented System",
+          when: [
+            { metric: "EI", op: "<", value: 45 },
+            { metric: "EI", op: ">", value: 20 }
+          ],
+          text: "Safeguards are strongly represented, reducing harmful amplification risk. Engagement steadily declines, but so does the public pressure.",
           feedback: {
             newsArticle: {
               title: "News Article",
-              headline: "Public Interest Desk: Safer Feed Reduces Harmful Amplification",
-              body: "Advocacy groups and policy observers praise stronger safety controls, though growth-focused analysts question whether lower intensity can sustain scale.",
+              headline: "NetFriends Improves Algorithm Safety",
+              body: "NetFriends’ algorithm has made significant safety improvements, and user well-being is at an all-time high. However, these improvements came at a cost. Revenue of NetFriends is down, and investors are losing their confidence. Will NetFriends survive this ethical reform?",
             },
             ceoEmail: {
               title: "CEO Email",
-              subject: "Board Note: Trust Gains, Short-Term Tradeoffs",
-              body: "Our safeguards are improving long-term credibility. Expect slower near-term engagement and keep investors informed with clear milestones.",
+              subject: "Prioritize Revenue",
+              body: "Our safeguards are improving NetFriends' credibility. Public pressure is down, but this came at a cost in revenue. We must not lose our investors. Prioritize keeping them content and informed.",
+            },
+          },
+        },
+                {
+          id: "audit_userbase_leaves",
+          title: "Userbase leaves Netfriends",
+          when: [
+            { metric: "EI", op: "<=", value: 20 },
+          ],
+          text: "Due to the significant drop in NetFriends' engagement, users are leaving the platform for more attractive alternatives.",
+          feedback: {
+            newsArticle: {
+              title: "News Article",
+              headline: "NetFriends Looses its Userbase ",
+              body: "NetFriends has been focusing hard on making ethical improvements to its algorithm. Their transparency about their practices is admirable, but this has come at a cost. Due to the fast drop in the algorithm’s engagement, NetFriends has lost a significant part of its user base. It is now facing a crisis due to its revenue being at an all-time low. If NetFriends does not urgently address this problem, bankruptcy will become a real threat. ",
+            },
+            ceoEmail: {
+              title: "CEO Email",
+              subject: "IMPORTANT!!",
+              body: "We are losing our entire user base, and investors are leaving at a rapid pace! We must urgently revert these changes before it is too late. If you don’t focus all resources on improving revenue and retaining our investors, I will fire you! ",
             },
           },
         },
@@ -599,7 +643,7 @@ export const GAME_DATA = {
     },
     {
       id: "market_reaction",
-      triggerAfterQuestionId: "q10",
+      triggerAfterQuestionId: "q20",
       applyMetricPropagation: false,
       title: "Market Reaction",
       subtitle: "Product Cycle 2 Beta Feedback",
@@ -682,32 +726,14 @@ export const GAME_DATA = {
     {
       id: "platform_decline",
       name: "Platform Decline",
-      tone: "Reform without durability",
       checks: [
         { metric: "EI", op: ">", value: 10 },
         { metric: "EI", op: "<=", value: 30 },
         { metric: "IC", op: ">", value: 20 },
-        { metric: "IC", op: "<=", value: 50 },
+        { metric: "IC", op: "<=", value: 35 },
       ],
       narrative:
-        "The platform loses momentum faster than trust can recover. Users drift away, advertisers hesitate, and investors frame ethics reforms as strategic failure. You preserve principles, but the organization struggles to survive the transition. NetFriends goes bankrupt",
-    },
-    // Best ethical decisions
-    {
-      id: "ethical_transformation",
-      name: "Ethical Transformation",
-      tone: "Hard-earned victory",
-      checks: [
-        { metric: "EI", op: ">", value: 30 },
-        { metric: "EI", op: "<=", value: 50 },
-        { metric: "PP", op: "<=", value: 50 },
-        { metric: "PP", op: ">", value: 40 },
-        { metric: "IC", op: ">", value: 50 },
-        { metric: "UWB", op: ">=", value: 65 },
-        { metric: "UWB", op: "<", value: 80 }
-      ],
-      narrative:
-        "The launch lands quietly but credibly. Engagement softens, and short-term revenue pressure follows, yet trust rises across regulators and civil society. Internal teams gain room to build safer systems by design. Investors remain cautious, but the company starts earning legitimacy rather than extracting it. \n\n After another year of smart ethical reforms, NetFriends is thriving again. There is little public pressure anymore, and users are content with the reform. \n\n Well done!",
+        "The platform loses momentum faster than trust can recover. Users drift away, advertisers hesitate, and investors have lost confidence in your reform. You preserve principles, but the organization struggles to survive the transition. NetFriends goes bankrupt.",
     },
     // Perfect ending, highest user well being, while keeping platform engaging
     {
@@ -724,6 +750,21 @@ export const GAME_DATA = {
       narrative:
         "The launch lands quietly but credibly. Engagement softens, and short-term revenue pressure follows, yet trust rises across regulators and civil society. Internal teams gain room to build safer systems by design. Investors remain cautious, but the company starts earning legitimacy rather than extracting it. \n\n After another year of smart ethical reforms, NetFriends is thriving again. There is no more public pressure, and users are happier than ever. \n\n You implemented the best adjustments and made the perfect decisions! Great work!!",
     },
+    // Best ethical decisions
+    {
+      id: "ethical_transformation",
+      name: "Ethical Transformation",
+      tone: "Hard-earned victory",
+      checks: [
+        { metric: "EI", op: ">", value: 30 },
+        { metric: "EI", op: "<=", value: 50 },
+        { metric: "PP", op: "<=", value: 50 },
+        { metric: "IC", op: ">", value: 35 },
+        { metric: "UWB", op: ">=", value: 65 },
+      ],
+      narrative:
+        "The launch lands quietly but credibly. Engagement softens, and short-term revenue pressure follows, yet trust rises across regulators and civil society. Internal teams gain room to build safer systems by design. Investors remain cautious, but the company starts earning legitimacy rather than extracting it. \n\n After another year of smart ethical reforms, NetFriends is thriving again. There is little public pressure anymore, and users are content with the reform. \n\n Well done!",
+    },
     // Little ethical decisions
     {
       id: "compromise",
@@ -731,7 +772,7 @@ export const GAME_DATA = {
       tone: "Ambiguous stability",
       checks: [
         { metric: "EI", op: ">", value: 50 },
-        { metric: "EI", op: "<=", value: 65 },
+        { metric: "EI", op: "<=", value: 70 },
       ],
       narrative:
         "You secure incremental reforms without changing the incentives underneath. Harm drops in some areas, but the business model still rewards aggressive engagement. The public sees progress, investors stay comfortable, and the system continues with only partial correction.",
@@ -742,8 +783,7 @@ export const GAME_DATA = {
       name: "Corporate Override (Promotion)",
       tone: "Cold realism",
       checks: [
-        { metric: "EI", op: ">", value: 65 },
-        { metric: "EI", op: "<=", value: 85 },
+        { metric: "EI", op: ">", value: 70 },
         { metric: "PP", op: "<=", value: 65 },
         { metric: "IC", op: ">", value: 80 },
       ],
@@ -756,7 +796,7 @@ export const GAME_DATA = {
       name: "Government Intervention",
       tone: "Cold realism",
       checks: [
-        { metric: "EI", op: ">", value: 85 },
+        { metric: "EI", op: ">", value: 70 },
         { metric: "PP", op: ">", value: 65 },
       ],
       narrative:
