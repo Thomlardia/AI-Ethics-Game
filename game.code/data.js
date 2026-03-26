@@ -1,6 +1,6 @@
 export const GAME_DATA = {
-  title: "AI Ethics Card Game",
-  subtitle: "Lead the internal ethics task force through five product stages.",
+  title: "The Developer’s Dilemma",
+  subtitle: "Lead NetFriends through their ethical reform.",
   initialMetrics: {
     AP: 80,
     EI: 70,
@@ -346,7 +346,7 @@ export const GAME_DATA = {
             {
               id: "q10_c2",
               label: "We will be collecting moderate behavioral data. This is necessary to keep our revenue stream going",
-              effects: { },
+              effects: { IC: 2, UWB: -3, AD: 2, AP: 2},
             },
             {
               id: "q10_c3",
@@ -521,7 +521,6 @@ export const GAME_DATA = {
           title: "Addictive Platform",
           when: [
             { metric: "EI", op: ">=", value: 90 },
-            { metric: "PP", op: ">=", value: 90 },
           ],
           text: "Engagement with the algorithm is at an all-time high. Revenue is rising, but so are ethical risks and public pressure.",
           feedback: {
@@ -542,7 +541,6 @@ export const GAME_DATA = {
           title: "Ethical Risks",
           when: [
             { metric: "EI", op: ">=", value: 70 },
-            { metric: "PP", op: ">=", value: 70 },
           ],
           text: "Engagement stays high, and ethical reforms have not been strictly implemented. Internal reviewers warn that emotionally provocative content is becoming overrepresented. Revenue is high, but we must stay cautious of ethical risks. ", 
           feedback: {
@@ -562,10 +560,7 @@ export const GAME_DATA = {
           title: "Balanced Development",
           when: [
             { metric: "EI", op: ">=", value: 45 },
-            { metric: "EI", op: "<", value: 70 },
-            { metric: "PP", op: ">=", value: 40 },
-            { metric: "PP", op: "<", value: 70 },
-            
+            { metric: "EI", op: "<", value: 70 },            
           ],
           text: "The system shows stable engagement with moderate safeguards. Reviewers still flag edge-case harms, but the current trajectory appears manageable.",
           feedback: {
@@ -714,9 +709,10 @@ export const GAME_DATA = {
     // Only ethical decisions
       {
       id: "corporate_override_fired",
-      name: "Corporate Override (Fired)",
+      name: "Corporate Override",
+      tone: "The EATF is Dissolved",
       checks: [
-        { metric: "EI", op: "<=", value: 10 },
+        { metric: "EI", op: "<=", value: 15 },
         { metric: "IC", op: "<=", value: 20 },
       ],
       narrative:
@@ -726,11 +722,10 @@ export const GAME_DATA = {
     {
       id: "platform_decline",
       name: "Platform Decline",
+      tone: "Users Leave NetFriends",
       checks: [
-        { metric: "EI", op: ">", value: 10 },
+        { metric: "EI", op: ">", value: 15 },
         { metric: "EI", op: "<=", value: 30 },
-        { metric: "IC", op: ">", value: 20 },
-        { metric: "IC", op: "<=", value: 35 },
       ],
       narrative:
         "The platform loses momentum faster than trust can recover. Users drift away, advertisers hesitate, and investors have lost confidence in your reform. You preserve principles, but the organization struggles to survive the transition. NetFriends goes bankrupt.",
@@ -739,9 +734,9 @@ export const GAME_DATA = {
     {
       id: "ethical_transformation",
       name: "Ethical Transformation",
-      tone: "Hard-earned victory",
+      tone: "The Perfect Ethical Reform",
       checks: [
-        { metric: "EI", op: ">", value: 35 },
+        { metric: "EI", op: ">", value: 30 },
         { metric: "EI", op: "<=", value: 50 },
         { metric: "PP", op: "<=", value: 40 },
         { metric: "IC", op: ">", value: 50 },
@@ -754,7 +749,7 @@ export const GAME_DATA = {
     {
       id: "ethical_transformation",
       name: "Ethical Transformation",
-      tone: "Hard-earned victory",
+      tone: "NetFriends Ethical Reform is Succesful",
       checks: [
         { metric: "EI", op: ">", value: 30 },
         { metric: "EI", op: "<=", value: 50 },
@@ -768,33 +763,33 @@ export const GAME_DATA = {
     // Little ethical decisions
     {
       id: "compromise",
-      name: "Compromise Ending",
-      tone: "Ambiguous stability",
+      name: "No Reform",
+      tone: "NetFriends Algorithm Stays Harmfull",
       checks: [
         { metric: "EI", op: ">", value: 50 },
         { metric: "EI", op: "<=", value: 70 },
       ],
       narrative:
-        "You secure incremental reforms without changing the incentives underneath. Harm drops in some areas, but the business model still rewards aggressive engagement. The public sees progress, investors stay comfortable, and the system continues with only partial correction.",
+        "The ethical reforms you have implemented are mostly symbolic. You fail to change the harmfull incentives of NetFriends' algorithm. Harmfullness drops in some areas, but the business model still rewards aggressive engagement. Investors stay comfortable and the system continues with harmfull extrection.",
     },
     // Almost no ethical decisions, while keeping public pressure low and investor confidence high
     {
       id: "corporate_override_promotion",
-      name: "Corporate Override (Promotion)",
-      tone: "Cold realism",
+      name: "Enforcement of Addiction",
+      tone: "Promoted to a NetFriends Excecutive ",
       checks: [
         { metric: "EI", op: ">", value: 70 },
         { metric: "PP", op: "<=", value: 65 },
-        { metric: "IC", op: ">", value: 80 },
+        { metric: "IC", op: ">", value: 70 },
       ],
       narrative:
-        "Growth reaches record levels and investor confidence hardens into full support. Ethical language remains in public messaging, but safeguards are mostly symbolic. You are promoted for delivering performance while structural harm continues.",
+        "Growth reaches record levels, and investor confidence hardens into full support. Ethical language exists only in public messaging to alleviate pressure. You are promoted for successfully creating a highly engaging algorithm and building a large NetFriends user base, while keeping public pressure manageable. Almost the entire NetFriends user base has been made addicted, and you have been rewarded for the astronomical growth this has caused.",
     },
     // Almost no ethical decisions, and high public pressure
     {
       id: "Government_Intervention",
       name: "Government Intervention",
-      tone: "Cold realism",
+      tone: "NetFriends Succumbs to Public Pressure",
       checks: [
         { metric: "EI", op: ">", value: 70 },
         { metric: "PP", op: ">", value: 65 },
